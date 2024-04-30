@@ -1,16 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.app.applicationai.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.9733333333333334" layoutX="115.0" layoutY="119.0" prefHeight="600.0" prefWidth="224.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="576.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane prefHeight="598.0" prefWidth="54.0">
+               <children>
+                  <SplitPane dividerPositions="0.13926174496644295" orientation="VERTICAL" prefHeight="598.0" prefWidth="219.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="156.0" prefWidth="217.0">
+                           <children>
+                              <BottomNavigationButton alignment="CENTER" prefHeight="80.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Your Chats" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="30.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="234.0" prefWidth="217.0">
+                           <children>
+                              <BottomNavigationButton alignment="TOP_LEFT" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 1" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="46.0" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 2" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="92.0" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 3" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="138.0" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat4" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="184.0" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 5" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="230.0" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 6" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="276.0" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 7" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="322.0" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 8" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="368.0" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 9" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="414.0" prefHeight="46.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 10" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                              <BottomNavigationButton alignment="TOP_LEFT" layoutY="460.0" prefHeight="80.0" prefWidth="217.0" style="-fx-background-color: Black;" text="Chat 11" textFill="WHITE">
+                                 <font>
+                                    <Font name="Minecraft" size="22.0" />
+                                 </font>
+                              </BottomNavigationButton>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="600.0" prefWidth="581.0" style="-fx-background-color: black;" />
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
