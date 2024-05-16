@@ -1,3 +1,19 @@
 .cancelButton:hover {
     -fx-text-fill: #b30404;
 }
+
+.loginButton {
+    -fx-background-color: #68988a;
+}
+.loginButton:hover {
+    -fx-background-color: #65ae98;
+}
+
+.hyperlink {
+    -fx-focus-color: transparent;
+    -fx-underline: false;
+    -fx-text-fill: #68988a;
+}
+.hyperlink:hover {
+    -fx-text-fill: #65ae98;
+}
