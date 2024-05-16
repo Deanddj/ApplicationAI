@@ -27,12 +27,12 @@ public class TEST_startLoginScreen extends Application {
     }
 
     public static void main(String[] args) {
-        initializeUsers();
+        initialize();
         launch();
     }
 
     // Tijdelijke methoden om de login functie te testen
-    public static void initializeUsers() {
+    public static void initialize() {
         users = new ArrayList<>();
         User user1 = new User("test@gmail.com", "test");
         User user2 = new User("test@outlook.com", "test");
