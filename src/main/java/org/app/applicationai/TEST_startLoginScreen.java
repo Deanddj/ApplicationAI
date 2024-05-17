@@ -18,7 +18,7 @@ public class TEST_startLoginScreen extends Application {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         System.out.println("Operating System = " + System.getProperty("os.name"));
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-screen.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("login-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.initStyle(StageStyle.TRANSPARENT);
         scene.setFill(Color.TRANSPARENT);
