@@ -1,0 +1,26 @@
+{
+  "allDocumentation": [
+    {
+      "keywords": [
+        "vakantie",
+        "vrijvragen"
+      ],
+      "documentation": "42 B.V. Heeft 1 mei vakantie die 2 weken duurt. Deze vakantie is normaal van eind april tot en met begin mei."
+    },
+    {
+      "keywords": [
+        "ontslag",
+        "opzeggen"
+      ],
+      "documentation": "Bij 42 B.V. moet je minimaal een maand van tevoren je contract opzeggen voordat je wilt stoppen met werken. Je kunt een email sturen naar de manager (manage@42bv.nl) met een ontslag brief. Deze worden alleen op een doordeweekse dag beantwoord."
+    },
+    {
+      "keywords": [
+        "pauze",
+        "lunch",
+        "break"
+      ],
+      "documentation": "Bij 42 B.V. hebben de meeste medewerkers 2 keer pauze. Dit geldt alleen op een normale werkdag van 8 uur (09:00 tot 17:00), wanneer je deze tijden werkt heb je om 11:00 (15 minuten) en 13:00 (30 minuten) pauze. Andere tijden zijn bijvoorbeeld 12:00-17:00, in dit geval heb je 1 grote pauze van een half uur om 15:00 uur."
+    }
+  ]
+}
