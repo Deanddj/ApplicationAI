@@ -7,28 +7,20 @@
 
 <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.applicationai.HelloController">
     <children>
-        <SplitPane dividerPositions="0.19423558897243107" layoutX="188.0" layoutY="66.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Button fx:id="button_new_chat" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#addNewTab" prefHeight="25.0" prefWidth="122.0" text="New Chat" />
+        <SplitPane dividerPositions="0.2" layoutX="0.0" layoutY="50.0" prefHeight="550.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
             <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="174.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="200.0">
                     <children>
-                        <SplitPane dividerPositions="0.7130872483221476" layoutX="-4.0" layoutY="217.0" orientation="VERTICAL" prefHeight="598.0" prefWidth="152.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                            <items>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                    <children>
-                                        <Button fx:id="button_logout" layoutX="17.0" layoutY="129.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" text="Logout" />
-                                    </children>
-                                </AnchorPane>
-                            </items>
-                        </SplitPane>
+                        <Button fx:id="button_logout" layoutY="421.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="156.0" text="Logout" />
                     </children>
                 </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="600.0">
                     <children>
-                        <TabPane fx:id="tabPane" layoutX="120.0" layoutY="115.0" prefHeight="598.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <TabPane fx:id="tabPane" layoutX="0.0" layoutY="0.0" prefHeight="550.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                     </children>
                 </AnchorPane>
             </items>
         </SplitPane>
-        <Button fx:id="button_new_chat" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#loadInitialChatTab" prefHeight="25.0" prefWidth="122.0" text="New Chat" />
     </children>
 </AnchorPane>

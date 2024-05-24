@@ -1,5 +1,6 @@
 package org.app.applicationai;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -11,9 +12,20 @@ import org.app.applicationai.ChatTabController;
 import java.io.IOException;
 
 public class HelloController {
+    @FXML
+    private Button button_logout;
 
     @FXML
     private Button button_new_chat;
+    @FXML
+    private Button button_settings;
+
+/*
+    @FXML
+    private ComboBox <String> languageComboBox;*/
+
+    private String selectedLanguage = "English";
+
 
     @FXML
     private TabPane tabPane;
@@ -28,18 +40,18 @@ public class HelloController {
 
     @FXML
     private void loadInitialChatTab() {
-        addNewTab("Chat " + tabCount);
+        addNewTab(new ActionEvent());
     }
 
     @FXML
-    private void addNewTab(String tabTitle) {
+    private void addNewTab(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("chat-tab.fxml"));
             AnchorPane chatTabContent = loader.load();
 
             ChatTabController chatTabController = loader.getController();
 
-            Tab newTab = new Tab(tabTitle, chatTabContent);
+            Tab newTab = new Tab("Chat " + tabCount, chatTabContent);
             tabPane.getTabs().add(newTab);
 
             tabCount++;
@@ -47,4 +59,14 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+    /*@FXML
+    private void updateLanguage(ActionEvent event) {
+        selectedLanguage = languageComboBox.getValue();
+        for (Tab tab : tabPane.getTabs()) {
+            ChatTabController chatTabController = (ChatTabController) tab.getContent().getUserData();
+            if (chatTabController != null) {
+                chatTabController.setLanguage(selectedLanguage);
+            }
+        }
+    }*/
 }

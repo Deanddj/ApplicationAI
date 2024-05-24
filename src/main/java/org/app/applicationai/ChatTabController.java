@@ -19,13 +19,42 @@ public class ChatTabController {
     private TextArea messageTextArea;
 
     @FXML
+    private TextArea chatTextArea;
+
+    @FXML
+    private TextArea inputTextArea;
+
+    @FXML
     private Label keywordLabel;
 
     private String userMessage;
 
     private static final List<String> PREDEFINED_KEYWORDS = Arrays.asList(
             "domain-model", "financial-system", "social-platform-application", "functional-requirements", "vakantie", "ontslag", "opzeggen");
+    private String language;
 
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    @FXML
+    private void sendPrompt() {
+        String userPrompt = inputTextArea.getText();
+        chatTextArea.appendText("User: " + userPrompt + "\n");
+        Set<String> overlappingKeywords = filterKeywords(userPrompt);
+        // Hier zou de logica komen voor het verzenden van de prompt naar de AI-assistent
+        // en het ontvangen van een reactie, die dan wordt toegevoegd aan chatTextArea
+        // Bijvoorbeeld:
+        StringBuilder aiResponse = new StringBuilder("AI: ");
+
+        // Enhanced for loop
+        for (String name : overlappingKeywords) {
+            aiResponse.append(name).append(", ");
+        }
+        chatTextArea.appendText(aiResponse + "\n");
+
+        inputTextArea.clear();
+    }
     public void getMessage() {
         userMessage = messageTextArea.getText();
         Set<String> overlappingKeywords = filterKeywords(userMessage);
