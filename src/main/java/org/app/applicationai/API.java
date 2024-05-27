@@ -13,7 +13,7 @@ public class API {
         // !! TIJDELIJKE METHODE OM TE TESTEN !!
 
         // API-object aanmaken
-        API api = new API("158.178.151.211", "llama3:8b");
+        API api = new API("localhost", "gemma");
 
         // Een vraag stellen aan de AI
         api.connect("Hallo, kun je zeggen wie je bent?");

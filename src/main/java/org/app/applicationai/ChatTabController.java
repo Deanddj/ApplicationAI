@@ -30,7 +30,14 @@ public class ChatTabController {
     private String userMessage;
 
     private static final List<String> PREDEFINED_KEYWORDS = Arrays.asList(
-            "domain-model", "financial-system", "social-platform-application", "functional-requirements", "vakantie", "ontslag", "opzeggen");
+            "domain-model",
+            "financial-system",
+            "social-platform-application",
+            "functional-requirements",
+            "vakantie",
+            "ontslag",
+            "opzeggen"
+    );
     private String language;
 
     public void setLanguage(String language) {
