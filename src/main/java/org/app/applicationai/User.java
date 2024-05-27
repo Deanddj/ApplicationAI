@@ -15,4 +15,12 @@ public class User {
     public String getPassword() {
         return this.password;
     }
+    public void updateEmail(String newEmail) {
+        this.email = newEmail;
+    }
+
+    public void updatePassword(String newPassword) {
+        this.password = newPassword;
+    }
 }
+

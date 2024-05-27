@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="message keyword filter added in ChatTabController">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16-5-2024_14_53__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16-5-2024_14_53__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16-5-2024_14_55__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16-5-2024_14_55__Changes_.xml" afterDir="false" />
+    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="setting">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/settings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16-5-2024_14_53_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16-5-2024_14_53__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16-5-2024_14_55_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16-5-2024_14_55__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22-5-2024_22_14__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22-5-2024_22_14__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22-5-2024_22_17__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22-5-2024_22_17__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3-5-2024_14_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3-5-2024_14_23__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/chat-tab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/chat-tab.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +67,7 @@
     "Application.API.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "cc2e0f18",
+    "git-widget-placeholder": "Settings",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/aliha/AppData/Local/SceneBuilder/SceneBuilder.exe",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -73,7 +79,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ibrah\IdeaProjects\ApplicationAI\src\main\resources\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.app.applicationai.HelloApplication" />
       <module name="ApplicationAI" />
@@ -102,8 +113,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.TEST_startLoginScreen" />
@@ -158,8 +169,18 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="033ce46c-d9f8-4066-9970-622b28f21082" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="033ce46c-d9f8-4066-9970-622b28f21082">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -181,9 +202,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="message keyword filter added in ChatTabController" />
     <MESSAGE value="merge" />
     <MESSAGE value="variable" />
-    <option name="LAST_COMMIT_MESSAGE" value="variable" />
+    <MESSAGE value="message keyword filter added in ChatTabController" />
+    <MESSAGE value="setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting" />
   </component>
 </project>
