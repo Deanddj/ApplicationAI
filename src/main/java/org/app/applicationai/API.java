@@ -6,10 +6,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import javafx.scene.control.TextArea;
 import org.json.JSONObject;
 
 public class API {
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         // !! TIJDELIJKE METHODE OM TE TESTEN !!
 
         // API-object aanmaken
@@ -19,6 +21,15 @@ public class API {
         api.connect("Hallo, kun je zeggen wie je bent?");
 
         // !! TIJDELIJKE METHODE OM TE TESTEN !!
+    }*/
+
+    public static void starAI(String userPrompt, String documentatie, TextArea chat){
+
+        // API-object aanmaken
+        API api = new API("localhost", "gemma");
+
+        // Een vraag stellen aan de AI
+        api.connect("Halo. Ik wil graag dat je mijn vraag beantwoordt met behulp van documentatie dat ik je stuur. Dit is de vraag:" + userPrompt+ ". En dit is de documentatie: " + documentatie +".", chat);
     }
 
     private final String host;
@@ -36,7 +47,7 @@ public class API {
         this.model = model;
     }
 
-    public void connect(String question) {
+    public void connect(String question, TextArea chat) {
         try {
             // API endpoint URL
             String apiUrl = "http://" + host + ":" + port + "/api/generate";
@@ -75,7 +86,7 @@ public class API {
                 while ((inputLine = in.readLine()) != null) {
                     JSONObject jsonResponse = new JSONObject(inputLine);
                     if (jsonResponse.has("response")) {
-                        System.out.print(jsonResponse.getString("response"));
+                        chat.appendText(jsonResponse.getString("response"));
                     }
                 }
             }

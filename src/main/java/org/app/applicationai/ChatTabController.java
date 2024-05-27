@@ -5,10 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ChatTabController {
 
@@ -29,36 +26,42 @@ public class ChatTabController {
 
     private String userMessage;
 
-    private static final List<String> PREDEFINED_KEYWORDS = Arrays.asList(
-            "domain-model",
-            "financial-system",
-            "social-platform-application",
-            "functional-requirements",
-            "vakantie",
-            "ontslag",
-            "opzeggen"
-    );
+    private String documentatie;
+
+    private static final List<String> PREDEFINED_KEYWORDS = Elasticsearch.getKeywords("src/main/resources/org/app/applicationai/elasticsearch.json");
+
     private String language;
 
     public void setLanguage(String language) {
         this.language = language;
     }
 
+
     @FXML
     private void sendPrompt() {
         String userPrompt = inputTextArea.getText();
         chatTextArea.appendText("User: " + userPrompt + "\n");
         Set<String> overlappingKeywords = filterKeywords(userPrompt);
+        List<String> keywords = new ArrayList<>(overlappingKeywords);
         // Hier zou de logica komen voor het verzenden van de prompt naar de AI-assistent
         // en het ontvangen van een reactie, die dan wordt toegevoegd aan chatTextArea
         // Bijvoorbeeld:
-        StringBuilder aiResponse = new StringBuilder("AI: ");
 
+
+        new Thread(() -> {
+            documentatie = Elasticsearch.startElasticSearch(keywords);
+            API.starAI(userPrompt, documentatie, chatTextArea);
+        }).start();
+
+
+        /*StringBuilder aiResponse = new StringBuilder("AI: " + documentatie);
         // Enhanced for loop
         for (String name : overlappingKeywords) {
             aiResponse.append(name).append(", ");
         }
-        chatTextArea.appendText(aiResponse + "\n");
+        */
+
+        //chatTextArea.appendText(aiResponse + "\n");
 
         inputTextArea.clear();
     }

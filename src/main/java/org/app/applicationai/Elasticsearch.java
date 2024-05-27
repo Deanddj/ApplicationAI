@@ -7,6 +7,7 @@ import org.json.JSONTokener;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
@@ -26,6 +27,20 @@ public class Elasticsearch {
         System.out.println(result);
 
         // !! TIJDELIJKE METHODE OM TE TESTEN !!
+    }
+
+    public static String startElasticSearch(List<String> keywords){
+        // Pad naar de JSON file
+        String jsonFilePath = "src/main/resources/org/app/applicationai/elasticsearch.json";
+
+        // Keywords om te zoeken
+        List<String> searchKeywords = keywords;
+
+        // Methode aanroepen voor resultaat
+        String result = searchDocumentation(jsonFilePath, searchKeywords);
+        System.out.println(result);
+        return result;
+
     }
 
     public static String searchDocumentation(String jsonFilePath, List<String> searchKeywords) {
@@ -69,5 +84,34 @@ public class Elasticsearch {
         }
 
         return result.toString().trim();
+    }
+
+    public static List<String> getKeywords(String jsonFilePath) {
+        Set<String> keywordsSet = new HashSet<>();
+
+        // JSON file laden
+        try (InputStream is = new FileInputStream(jsonFilePath)) {
+            JSONTokener tokener = new JSONTokener(is);
+            JSONObject jsonObject = new JSONObject(tokener);
+            JSONArray allDocumentation = jsonObject.getJSONArray("allDocumentation");
+
+            // Verzamel alle unieke keywords
+            for (int i = 0; i < allDocumentation.length(); i++) {
+                JSONObject doc = allDocumentation.getJSONObject(i);
+                JSONArray keywords = doc.getJSONArray("keywords");
+
+                for (int j = 0; j < keywords.length(); j++) {
+                    keywordsSet.add(keywords.getString(j));
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            System.err.println("Bestand niet gevonden: " + jsonFilePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // Convert Set to List
+        return new ArrayList<>(keywordsSet);
     }
 }
