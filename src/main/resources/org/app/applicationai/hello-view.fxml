@@ -15,12 +15,12 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="200.0">
                     <children>
                         <Button fx:id="button_logout" layoutY="421.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="156.0" text="Logout" />
-                  <Button fx:id="button_settings" layoutX="45.0" layoutY="344.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="65.0" text="Settings" />
                   <ImageView fitHeight="56.0" fitWidth="65.0" layoutX="50.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/settings.png" />
                      </image>
                   </ImageView>
+                  <Button fx:id="button_settings" layoutX="45.0" layoutY="455.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="65.0" style="-fx-background-color: transparent;" />
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="600.0">

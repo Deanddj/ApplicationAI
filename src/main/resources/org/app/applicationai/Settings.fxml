@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.applicationai.SettingsController">
    <children>
       <Label layoutX="189.0" layoutY="171.0" prefHeight="45.0" prefWidth="125.0" text="E-Mail">
@@ -39,5 +38,6 @@
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
+      <Button fx:id="button_back" layoutX="47.0" layoutY="67.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

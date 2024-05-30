@@ -22,11 +22,16 @@ public class SettingsController {
     @FXML
     private Button button_wijzigPassword;
 
+    @FXML
+    private Button button_back;
+
 
 
     public void initialize() {
         user = new User("current@example.com", "currentPassword"); // Haal dit uit je gebruikerssessie
         emailField.setText(user.getEmail());
+        button_back.setOnAction(event -> handleBack());
+
     }
 
     @FXML
@@ -46,7 +51,6 @@ public class SettingsController {
     }
 
     @FXML
-    public void handleBack() {
-        HelloApplication.switchScene("hello-view.fxml");
+    public void handleBack() {HelloApplication.switchScene("hello-view.fxml");
     }
 }
