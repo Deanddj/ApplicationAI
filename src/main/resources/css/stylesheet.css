@@ -2,6 +2,12 @@
     -fx-text-fill: #b30404;
 }
 
+.sendButton{
+-fx-background-color: #75AC9D;}
+
+.sendButton:hover{
+-fx-background-color: #68988a;}
+
 .loginButton {
     -fx-background-color: #68988a;
 }
