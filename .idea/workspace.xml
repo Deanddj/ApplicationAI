@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/back.png" beforeDir="false" />
+    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="Klassen verbinden">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/chat-tab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/chat-tab.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,13 +172,13 @@
       <option name="project" value="LOCAL" />
       <updated>1716541626458</updated>
     </task>
-    <task id="LOCAL-00004" summary="settings page en terug naar main">
+    <task id="LOCAL-00004" summary="Klassen verbinden">
       <option name="closed" value="true" />
-      <created>1717068567332</created>
+      <created>1716808158392</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1717068567332</updated>
+      <updated>1716808158392</updated>
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
@@ -206,10 +210,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="message keyword filter added in ChatTabController" />
     <MESSAGE value="merge" />
     <MESSAGE value="variable" />
-    <MESSAGE value="message keyword filter added in ChatTabController" />
-    <MESSAGE value="settings page en terug naar main" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings page en terug naar main" />
+    <MESSAGE value="Klassen verbinden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Klassen verbinden" />
   </component>
 </project>
