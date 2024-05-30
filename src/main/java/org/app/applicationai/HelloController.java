@@ -36,10 +36,12 @@ public class HelloController {
     public void initialize() {
         // Laad de initiële chat-tab
         loadInitialChatTab();
+        button_settings.setOnAction(event -> loadSettings());
     }
 
     @FXML
     private void loadInitialChatTab() {
+
         addNewTab(new ActionEvent());
     }
 
@@ -58,6 +60,12 @@ public class HelloController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    @FXML
+    public void loadSettings() {
+        HelloApplication.switchScene("Settings.fxml");
     }
     /*@FXML
     private void updateLanguage(ActionEvent event) {
