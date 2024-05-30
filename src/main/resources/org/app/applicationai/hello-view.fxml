@@ -6,6 +6,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.applicationai.HelloController">
     <children>
@@ -14,13 +15,25 @@
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="200.0">
                     <children>
-                        <Button fx:id="button_logout" layoutY="421.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="156.0" text="Logout" />
-                  <ImageView fitHeight="56.0" fitWidth="65.0" layoutX="50.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true">
+                        <Button fx:id="button_logout" layoutX="-7.0" layoutY="504.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="164.0" styleClass="sendButton" stylesheets="@../../../css/stylesheet.css" text="      Logout" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font></Button>
+                  <Button fx:id="button_settings" layoutX="-3.0" layoutY="463.0" mnemonicParsing="false" onAction="#loadSettings" prefHeight="44.0" prefWidth="164.0" styleClass="sendButton" stylesheets="@../../../css/stylesheet.css" text="      Settings" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="2.0" layoutY="508.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/exit.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="6.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/settings.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="button_settings" layoutX="45.0" layoutY="455.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="65.0" style="-fx-background-color: transparent;" />
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="600.0">
