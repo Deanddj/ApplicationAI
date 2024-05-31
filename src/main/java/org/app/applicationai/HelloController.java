@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import org.app.applicationai.ChatTabController;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloController {
     @FXML
@@ -30,13 +31,14 @@ public class HelloController {
     @FXML
     private TabPane tabPane;
 
-    private int tabCount = 1; // Begin met één chat-tab
+    private int tabCount = 1;
+    private final ArrayList<Tab> openTabs = new ArrayList<>();
 
     @FXML
     public void initialize() {
-        // Laad de initiële chat-tab
         loadInitialChatTab();
         button_settings.setOnAction(event -> loadSettings());
+        button_logout.setOnAction(event -> loadLogin());
     }
 
     @FXML
@@ -55,7 +57,7 @@ public class HelloController {
 
             Tab newTab = new Tab("Chat " + tabCount, chatTabContent);
             tabPane.getTabs().add(newTab);
-
+            openTabs.add(newTab);
             tabCount++;
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,7 +67,13 @@ public class HelloController {
 
     @FXML
     public void loadSettings() {
+        saveOpenTabs();
         HelloApplication.switchScene("Settings.fxml");
+    }
+    @FXML
+    public void loadLogin() {
+        saveOpenTabs();
+        HelloApplication.switchScene("login-screen.fxml");
     }
     /*@FXML
     private void updateLanguage(ActionEvent event) {
@@ -77,4 +85,18 @@ public class HelloController {
             }
         }
     }*/
+    private void saveOpenTabs() {
+        openTabs.clear();
+        openTabs.addAll(tabPane.getTabs());
+    }
+
+    private void restoreOpenTabs() {
+        tabPane.getTabs().clear();
+        tabPane.getTabs().addAll(openTabs);
+    }
+
+    public void loadOpenTabs() {
+        restoreOpenTabs();
+    }
 }
+

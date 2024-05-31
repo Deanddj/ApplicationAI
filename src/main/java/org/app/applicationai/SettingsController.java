@@ -75,7 +75,7 @@ public class SettingsController {
 
     @FXML
     public void handleBack() {
-        HelloApplication.switchScene("hello-view.fxml");
+        HelloApplication.goToChatScene();
     }
 
     private boolean checkEmail(String email) {
@@ -113,7 +113,7 @@ public class SettingsController {
                 json.put("password", user.getPassword());
 
                 FileWriter fileWriter = new FileWriter(USER_DATA_FILE);
-                fileWriter.write(json.toString(4)); // Pretty print with indentation
+                fileWriter.write(json.toString(4));
                 fileWriter.flush();
                 fileWriter.close();
             } catch (IOException e) {

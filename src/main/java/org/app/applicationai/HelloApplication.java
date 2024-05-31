@@ -9,21 +9,40 @@ import java.io.IOException;
 
 public class HelloApplication extends Application {
     private static Stage primaryStage;
+    private static Scene chatScene;
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
         switchScene("hello-view.fxml");
-        stage.setTitle("Hello!");
+        stage.setTitle("ChatAI");
         stage.show();
     }
     public static void switchScene(String fxml) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+
+            // Als we teruggaan naar het chat-scherm, laad dan de geopende tabs
+            if (fxml.equals("hello-view.fxml")) {
+                HelloController controller = fxmlLoader.getController();
+                controller.loadOpenTabs();
+            }
+
             primaryStage.setScene(scene);
+
+            // Sla de chat-scene op voor later gebruik
+            if (fxml.equals("hello-view.fxml")) {
+                chatScene = scene;
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    // Methode om terug te keren naar het chat-scherm
+    public static void goToChatScene() {
+        primaryStage.setScene(chatScene);
     }
     public static void main(String[] args) {
         launch();
