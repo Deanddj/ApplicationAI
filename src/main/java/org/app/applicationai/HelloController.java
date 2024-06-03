@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import org.app.applicationai.ChatTabController;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloController implements LanguageObserver {
 
@@ -27,44 +28,78 @@ public class HelloController implements LanguageObserver {
 
     private int tabCount = 1; // Begin met één chat-tab
 
+    private final ArrayList<Tab> openTabs = new ArrayList<>();
+
     private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
 
     @FXML
     public void initialize() {
         // Laad de initiële chat-tab
         loadInitialChatTab();
+
         button_instellingen.setOnAction(event -> loadSettings());
-        System.out.println(languageSubject);
+        button_uitloggen.setOnAction(event -> loadLogin());
+
         languageSubject.addObserver(this);
         loadLanguage();
     }
 
     @FXML
     private void loadInitialChatTab() {
-        addNewTab(new ActionEvent());
+        addNewTab();
     }
 
     @FXML
-    private void addNewTab(ActionEvent event) {
+    private void addNewTab() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("chat-tab.fxml"));
             AnchorPane chatTabContent = loader.load();
-
             ChatTabController chatTabController = loader.getController();
+
+            chatTabController.setTabCount(tabCount);
+            chatTabController.setHelloController(this);
 
             Tab newTab = new Tab("Chat " + tabCount, chatTabContent);
             tabPane.getTabs().add(newTab);
-
+            openTabs.add(newTab);
             tabCount++;
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    public void changeTabName(int tabIndex, String newName) {
+        if (tabIndex >= 0 && tabIndex < openTabs.size()) {
+            Tab tab = openTabs.get(tabIndex);
+            tab.setText(newName);
+        } else {
+            System.out.println("Tab index out of bounds.");
+        }
+    }
 
     @FXML
     public void loadSettings() {
+        saveOpenTabs();
         HelloApplication.switchScene("Settings.fxml");
+    }
+    @FXML
+    public void loadLogin() {
+        saveOpenTabs();
+        HelloApplication.switchScene("login-screen.fxml");
+    }
+
+    private void saveOpenTabs() {
+        openTabs.clear();
+        openTabs.addAll(tabPane.getTabs());
+    }
+
+    private void restoreOpenTabs() {
+        tabPane.getTabs().clear();
+        tabPane.getTabs().addAll(openTabs);
+    }
+
+    public void loadOpenTabs() {
+        restoreOpenTabs();
     }
 
     @Override
@@ -72,9 +107,11 @@ public class HelloController implements LanguageObserver {
         if ("Dutch".equals(selectedLanguage) || "Nederlands".equals(selectedLanguage)) {
             button_instellingen.setText("      Instellingen");
             button_uitloggen.setText("    Uitloggen");
+            button_new_chat.setText("Nieuwe Chat");
         } else {
             button_instellingen.setText("      Settings");
             button_uitloggen.setText("    Logout");
+            button_new_chat.setText("New Chat");
         }
     }
 
@@ -82,15 +119,4 @@ public class HelloController implements LanguageObserver {
         String selectedLanguage = languageSubject.getCurrentLanguage();
         applyLanguageChanges(selectedLanguage);
     }
-
-    /*@FXML
-    private void updateLanguage(ActionEvent event) {
-        selectedLanguage = languageComboBox.getValue();
-        for (Tab tab : tabPane.getTabs()) {
-            ChatTabController chatTabController = (ChatTabController) tab.getContent().getUserData();
-            if (chatTabController != null) {
-                chatTabController.setLanguage(selectedLanguage);
-            }
-        }
-    }*/
 }

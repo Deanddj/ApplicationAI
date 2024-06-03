@@ -4,10 +4,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.util.*;
 
-public class ChatTabController {
+public class ChatTabController implements LanguageObserver{
 
     @FXML
     private Button button_send;
@@ -21,22 +23,39 @@ public class ChatTabController {
     @FXML
     private TextArea inputTextArea;
 
-    @FXML
-    private Label keywordLabel;
-
     private String userMessage;
 
     private String documentatie;
 
     private static final List<String> PREDEFINED_KEYWORDS = Elasticsearch.getKeywords("src/main/resources/org/app/applicationai/elasticsearch.json");
 
-    private String language;
+    private HelloController helloController;
 
-    public void setLanguage(String language) {
-        this.language = language;
+    private int tabCount;
+
+    private boolean tabNameChanged = false;
+
+
+    private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
+
+    public void ChatTabController (int tabCount){
+
+        this.tabCount = tabCount;
     }
+    public void setTabCount(int tabCount) {
+        this.tabCount = tabCount;
+    }
+    public void setHelloController(HelloController helloController) {
+        this.helloController = helloController;
+    }
+    @FXML
+    public void initialize() {
+        // Laad de initiële chat-tab
+        languageSubject.addObserver(this);
+        loadLanguage();
 
 
+    }
     @FXML
     private void sendPrompt() {
         String userPrompt = inputTextArea.getText();
@@ -47,33 +66,19 @@ public class ChatTabController {
         // Hier zou de logica komen voor het verzenden van de prompt naar de AI-assistent
         // en het ontvangen van een reactie, die dan wordt toegevoegd aan chatTextArea
         // Bijvoorbeeld:
-
-
+        if (!keywords.isEmpty() && !tabNameChanged) {
+            helloController.changeTabName(tabCount - 1, keywords.get(0));
+            tabNameChanged = true;
+        }
         new Thread(() -> {
+
             documentatie = Elasticsearch.startElasticSearch(keywords);
             chatTextArea.appendText("AI: ");
             API.starAI(userPrompt, documentatie, chatTextArea);
             chatTextArea.appendText("\n\n");
         }).start();
 
-
-        /*StringBuilder aiResponse = new StringBuilder("AI: " + documentatie);
-        // Enhanced for loop
-        for (String name : overlappingKeywords) {
-            aiResponse.append(name).append(", ");
-        }
-        */
-
-        //chatTextArea.appendText(aiResponse + "\n");
-
         inputTextArea.clear();
-    }
-    public void getMessage() {
-        userMessage = messageTextArea.getText();
-        Set<String> overlappingKeywords = filterKeywords(userMessage);
-        keywordLabel.setText("Overlapping Keywords: " + overlappingKeywords);
-        clearMessage();
-
     }
 
     public Set<String> filterKeywords(String text) {
@@ -94,5 +99,27 @@ public class ChatTabController {
     public void clearMessage() {
         messageTextArea.clear();
     }
+
+    @Override
+    public void applyLanguageChanges(String selectedLanguage) {
+        if ("Dutch".equals(selectedLanguage) || "Nederlands".equals(selectedLanguage)) {
+            button_send.setText("Verstuur");
+            Font font = Font.font("Arial", FontWeight.BOLD, 14.8);
+            button_send.setFont(font);
+        } else {
+            button_send.setText("Send");
+            Font font = Font.font("Arial", FontWeight.BOLD, 18);
+            button_send.setFont(font);
+        }
+    }
+
+    private void loadLanguage() {
+        String selectedLanguage = languageSubject.getCurrentLanguage();
+        System.out.println(selectedLanguage);
+        applyLanguageChanges(selectedLanguage);
+
+    }
 }
+
+
 
