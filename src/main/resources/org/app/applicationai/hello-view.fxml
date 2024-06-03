@@ -15,23 +15,23 @@
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="200.0">
                     <children>
-                        <Button fx:id="button_logout" layoutX="-7.0" layoutY="504.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="164.0" styleClass="sendButton" stylesheets="@../../../css/stylesheet.css" text="      Logout" textFill="WHITE">
+                        <Button fx:id="button_uitloggen" layoutX="-4.0" layoutY="504.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="164.0" styleClass="sendButton" stylesheets="@../../../css/stylesheet.css" text="    Uitloggen" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="18.0" />
+                        <Font name="System Bold" size="16.0" />
                      </font></Button>
-                  <Button fx:id="button_settings" layoutX="-3.0" layoutY="463.0" mnemonicParsing="false" onAction="#loadSettings" prefHeight="44.0" prefWidth="164.0" styleClass="sendButton" stylesheets="@../../../css/stylesheet.css" text="      Settings" textFill="WHITE">
+                  <Button fx:id="button_instellingen" layoutX="-3.0" layoutY="463.0" mnemonicParsing="false" onAction="#loadSettings" prefHeight="44.0" prefWidth="164.0" styleClass="sendButton" stylesheets="@../../../css/stylesheet.css" text="      Instellingen" textFill="WHITE">
                      <font>
-                        <Font name="Arial Bold" size="18.0" />
+                        <Font name="Arial Bold" size="17.0" />
                      </font>
                   </Button>
-                  <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="2.0" layoutY="508.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView disable="true" fitHeight="34.0" fitWidth="29.0" layoutX="4.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/exit.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="6.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView disable="true" fitHeight="44.0" fitWidth="58.0" layoutX="2.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/settings.png" />
+                        <Image url="@../../../images/settings%20(1).png" />
                      </image>
                   </ImageView>
                     </children>

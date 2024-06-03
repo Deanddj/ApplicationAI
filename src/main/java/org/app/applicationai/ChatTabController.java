@@ -88,7 +88,6 @@ public class ChatTabController {
                 overlappingKeywords.add(keyword);
             }
         }
-
         return overlappingKeywords;
     }
 
