@@ -9,7 +9,7 @@
     <children>
         <TextArea fx:id="chatTextArea" editable="false" layoutX="14.0" layoutY="14.0" prefHeight="440.0" prefWidth="564.0" wrapText="true" />
         <TextArea fx:id="inputTextArea" layoutX="14.0" layoutY="466.0" prefHeight="42.0" prefWidth="490.0" wrapText="true" />
-        <Button layoutX="496.0" layoutY="466.0" mnemonicParsing="false" onAction="#sendPrompt" prefHeight="41.0" prefWidth="81.0" styleClass="sendButton" stylesheets="@../../../css/stylesheet.css" text="Send" textFill="WHITE">
+        <Button fx:id="button_send" layoutX="496.0" layoutY="466.0" mnemonicParsing="false" onAction="#sendPrompt" prefHeight="41.0" prefWidth="81.0" styleClass="sendButton" stylesheets="@../../../css/stylesheet.css" text="Send" textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="18.0" />
          </font></Button>

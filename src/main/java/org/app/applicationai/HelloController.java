@@ -46,16 +46,18 @@ public class HelloController implements LanguageObserver {
 
     @FXML
     private void loadInitialChatTab() {
-        addNewTab(new ActionEvent());
+        addNewTab();
     }
 
     @FXML
-    private void addNewTab(ActionEvent event) {
+    private void addNewTab() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("chat-tab.fxml"));
             AnchorPane chatTabContent = loader.load();
-
             ChatTabController chatTabController = loader.getController();
+
+            chatTabController.setTabCount(tabCount);
+            chatTabController.setHelloController(this);
 
             Tab newTab = new Tab("Chat " + tabCount, chatTabContent);
             tabPane.getTabs().add(newTab);
@@ -63,6 +65,15 @@ public class HelloController implements LanguageObserver {
             tabCount++;
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void changeTabName(int tabIndex, String newName) {
+        if (tabIndex >= 0 && tabIndex < openTabs.size()) {
+            Tab tab = openTabs.get(tabIndex);
+            tab.setText(newName);
+        } else {
+            System.out.println("Tab index out of bounds.");
         }
     }
 
@@ -96,9 +107,11 @@ public class HelloController implements LanguageObserver {
         if ("Dutch".equals(selectedLanguage) || "Nederlands".equals(selectedLanguage)) {
             button_instellingen.setText("      Instellingen");
             button_uitloggen.setText("    Uitloggen");
+            button_new_chat.setText("Nieuwe Chat");
         } else {
             button_instellingen.setText("      Settings");
             button_uitloggen.setText("    Logout");
+            button_new_chat.setText("New Chat");
         }
     }
 
