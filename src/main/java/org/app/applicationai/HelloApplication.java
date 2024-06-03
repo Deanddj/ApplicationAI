@@ -3,6 +3,7 @@ package org.app.applicationai;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,6 +16,7 @@ public class HelloApplication extends Application {
         primaryStage = stage;
         switchScene("hello-view.fxml");
         stage.setTitle("ChatAI");
+        primaryStage.setResizable(false);
         stage.show();
     }
     public static void switchScene(String fxml) {
@@ -22,7 +24,7 @@ public class HelloApplication extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml));
             Scene scene = new Scene(fxmlLoader.load(), 800, 600);
 
-            // Als we teruggaan naar het chat-scherm, laad dan de geopende tabs
+            // Als we teruggaan naar het chat scherm, laad dan de geopende tabs
             if (fxml.equals("hello-view.fxml")) {
                 HelloController controller = fxmlLoader.getController();
                 controller.loadOpenTabs();
@@ -30,7 +32,7 @@ public class HelloApplication extends Application {
 
             primaryStage.setScene(scene);
 
-            // Sla de chat-scene op voor later gebruik
+            // Sla de chat-scene op
             if (fxml.equals("hello-view.fxml")) {
                 chatScene = scene;
             }

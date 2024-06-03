@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="back button plaatje">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3-5-2024_14_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3-5-2024_14_23__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/changeuser.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changeuser.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/login-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/login-screen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,7 @@
     "Application.API.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "SessieManager",
+    "git-widget-placeholder": "Developer3",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/aliha/AppData/Local/SceneBuilder/SceneBuilder.exe",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -81,7 +83,7 @@
       <module name="ApplicationAI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.app.applicationai.*" />
+          <option name="PATTERN" value="org.app.applicationai.HelloApplication" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,7 +96,7 @@
       <module name="ApplicationAI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.app.applicationai.*" />
+          <option name="PATTERN" value="org.app.applicationai.HelloApplication" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,7 +109,7 @@
       <module name="ApplicationAI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.app.applicationai.*" />
+          <option name="PATTERN" value="org.app.applicationai.HelloApplication" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,7 +122,7 @@
       <module name="ApplicationAI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.app.applicationai.*" />
+          <option name="PATTERN" value="org.app.applicationai.HelloApplication" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -195,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717069035604</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="onthou tabcount en gesprekgeschiedenis">
+      <option name="closed" value="true" />
+      <created>1717194718062</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717194718062</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +240,7 @@
     <MESSAGE value="message keyword filter added in ChatTabController" />
     <MESSAGE value="settings page en terug naar main" />
     <MESSAGE value="back button plaatje" />
-    <option name="LAST_COMMIT_MESSAGE" value="back button plaatje" />
+    <MESSAGE value="onthou tabcount en gesprekgeschiedenis" />
+    <option name="LAST_COMMIT_MESSAGE" value="onthou tabcount en gesprekgeschiedenis" />
   </component>
 </project>

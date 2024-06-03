@@ -38,7 +38,7 @@ public class SettingsController {
 
     private User user;
 
-    private static final String USER_DATA_FILE = "changeuser.json";
+    String user_file = "src/main/resources/org/app/applicationai/changeuser.json";
 
     public void initialize() {
         loadUserData();
@@ -87,10 +87,10 @@ public class SettingsController {
     }
 
     private void loadUserData() {
-        File file = new File(USER_DATA_FILE);
+        File file = new File(user_file);
         if (file.exists()) {
             try {
-                String content = new String(Files.readAllBytes(Paths.get(USER_DATA_FILE)));
+                String content = new String(Files.readAllBytes(Paths.get(user_file)));
                 JSONObject json = new JSONObject(content);
                 String email = json.getString("email");
                 String password = json.getString("password");
@@ -104,15 +104,15 @@ public class SettingsController {
     }
 
     private void saveUserData() {
-        File file = new File(USER_DATA_FILE);
+        File file = new File(user_file);
         if (file.exists()) {
             try {
-                String content = new String(Files.readAllBytes(Paths.get(USER_DATA_FILE)));
+                String content = new String(Files.readAllBytes(Paths.get(user_file)));
                 JSONObject json = new JSONObject(content);
                 json.put("email", user.getEmail());
                 json.put("password", user.getPassword());
 
-                FileWriter fileWriter = new FileWriter(USER_DATA_FILE);
+                FileWriter fileWriter = new FileWriter(user_file);
                 fileWriter.write(json.toString(4));
                 fileWriter.flush();
                 fileWriter.close();
