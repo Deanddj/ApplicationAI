@@ -54,11 +54,13 @@ public class SettingsController implements LanguageObserver {
     private void loadLanguage() {
         String selectedLanguage = languageSubject.getCurrentLanguage();
         applyLanguageChanges(selectedLanguage);
+
         System.out.println(selectedLanguage);
     }
 
     @Override
     public void applyLanguageChanges(String selectedLanguage) {
+        languageComboBox.setValue(selectedLanguage);
         if ("Dutch".equals(selectedLanguage) || "Nederlands".equals(selectedLanguage)) {
             language.setText("Kies je taal");
             wachtwoord_Label.setText("Wachtwoord");
