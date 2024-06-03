@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import org.app.applicationai.ChatTabController;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloController implements LanguageObserver {
 
@@ -27,14 +28,18 @@ public class HelloController implements LanguageObserver {
 
     private int tabCount = 1; // Begin met één chat-tab
 
+    private final ArrayList<Tab> openTabs = new ArrayList<>();
+
     private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
 
     @FXML
     public void initialize() {
         // Laad de initiële chat-tab
         loadInitialChatTab();
+
         button_instellingen.setOnAction(event -> loadSettings());
-        System.out.println(languageSubject);
+        button_uitloggen.setOnAction(event -> loadLogin());
+
         languageSubject.addObserver(this);
         loadLanguage();
     }
@@ -54,17 +59,36 @@ public class HelloController implements LanguageObserver {
 
             Tab newTab = new Tab("Chat " + tabCount, chatTabContent);
             tabPane.getTabs().add(newTab);
-
+            openTabs.add(newTab);
             tabCount++;
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-
     @FXML
     public void loadSettings() {
+        saveOpenTabs();
         HelloApplication.switchScene("Settings.fxml");
+    }
+    @FXML
+    public void loadLogin() {
+        saveOpenTabs();
+        HelloApplication.switchScene("login-screen.fxml");
+    }
+
+    private void saveOpenTabs() {
+        openTabs.clear();
+        openTabs.addAll(tabPane.getTabs());
+    }
+
+    private void restoreOpenTabs() {
+        tabPane.getTabs().clear();
+        tabPane.getTabs().addAll(openTabs);
+    }
+
+    public void loadOpenTabs() {
+        restoreOpenTabs();
     }
 
     @Override
@@ -82,15 +106,4 @@ public class HelloController implements LanguageObserver {
         String selectedLanguage = languageSubject.getCurrentLanguage();
         applyLanguageChanges(selectedLanguage);
     }
-
-    /*@FXML
-    private void updateLanguage(ActionEvent event) {
-        selectedLanguage = languageComboBox.getValue();
-        for (Tab tab : tabPane.getTabs()) {
-            ChatTabController chatTabController = (ChatTabController) tab.getContent().getUserData();
-            if (chatTabController != null) {
-                chatTabController.setLanguage(selectedLanguage);
-            }
-        }
-    }*/
 }
