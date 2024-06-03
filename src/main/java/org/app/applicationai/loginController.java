@@ -15,7 +15,7 @@ public class loginController {
     @FXML
     private AnchorPane topPane;
     @FXML
-    private Button cancelButton;
+    private Button cancelButton, minimizeButton;
     @FXML
     private TextField usernameTextField;
     @FXML
@@ -42,6 +42,11 @@ public class loginController {
     public void cancelButtonOnAction (ActionEvent e) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+    }
+
+    public void minimizeButtonOnAction (ActionEvent e) {
+        Stage stage = (Stage) minimizeButton.getScene().getWindow();
+        stage.setIconified(true);
     }
 
     /* Een sleep functie van de GUI om het scherm te verplaatsen */

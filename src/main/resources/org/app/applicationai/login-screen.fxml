@@ -81,6 +81,11 @@
                           <Font name="System Bold" size="15.0" />
                       </font>
                   </Button>
+            <Button fx:id="minimizeButton" layoutX="723.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#minimizeButtonOnAction" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: transparant;" styleClass="minimizeButton" stylesheets="@../../../css/stylesheet.css" text="━">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
               </children>
       </AnchorPane>
    </top>

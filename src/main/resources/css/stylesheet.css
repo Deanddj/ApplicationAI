@@ -2,6 +2,10 @@
     -fx-text-fill: #b30404;
 }
 
+.minimizeButton:hover {
+    -fx-opacity: 0.5;
+}
+
 .loginButton {
     -fx-background-color: #68988a;
 }

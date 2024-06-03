@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="back button plaatje">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/changeuser.json" afterDir="false" />
+    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="message keyword filter added in ChatTabController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changeuser.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/stylesheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/login-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/login-screen.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +19,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Kotlin File" />
         <option value="Class" />
       </list>
     </option>
@@ -33,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Developer3" />
+        <entry key="$PROJECT_DIR$" value="Developer2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,11 +53,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.API.executor": "Run",
+    "Application.Elasticsearch.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.TEST_startLoginScreen.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Developer3",
+    "git-widget-placeholder": "Developer2",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/aliha/AppData/Local/SceneBuilder/SceneBuilder.exe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
@@ -71,19 +72,13 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ibrah\IdeaProjects\ApplicationAI\src\main\resources\org\app\applicationai" />
-      <recent name="C:\Users\ibrah\IdeaProjects\ApplicationAI\src\main\resources\images" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Application.TEST_startLoginScreen">
     <configuration name="API" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.app.applicationai.API" />
       <module name="ApplicationAI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.app.applicationai.HelloApplication" />
+          <option name="PATTERN" value="org.app.applicationai.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,7 +91,7 @@
       <module name="ApplicationAI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.app.applicationai.HelloApplication" />
+          <option name="PATTERN" value="org.app.applicationai.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,7 +104,7 @@
       <module name="ApplicationAI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.app.applicationai.HelloApplication" />
+          <option name="PATTERN" value="org.app.applicationai.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,7 +117,7 @@
       <module name="ApplicationAI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.app.applicationai.HelloApplication" />
+          <option name="PATTERN" value="org.app.applicationai.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,10 +127,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.API" />
-        <item itemvalue="Application.Elasticsearch" />
         <item itemvalue="Application.TEST_startLoginScreen" />
+        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Elasticsearch" />
+        <item itemvalue="Application.API" />
         <item itemvalue="Application.TEST_startLoginScreen" />
       </list>
     </recent_temporary>
@@ -181,31 +176,7 @@
       <option name="project" value="LOCAL" />
       <updated>1716541626458</updated>
     </task>
-    <task id="LOCAL-00004" summary="settings page en terug naar main">
-      <option name="closed" value="true" />
-      <created>1717068567332</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1717068567332</updated>
-    </task>
-    <task id="LOCAL-00005" summary="back button plaatje">
-      <option name="closed" value="true" />
-      <created>1717069035604</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1717069035604</updated>
-    </task>
-    <task id="LOCAL-00006" summary="onthou tabcount en gesprekgeschiedenis">
-      <option name="closed" value="true" />
-      <created>1717194718062</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1717194718062</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,12 +206,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="message keyword filter added in ChatTabController" />
     <MESSAGE value="merge" />
     <MESSAGE value="variable" />
-    <MESSAGE value="message keyword filter added in ChatTabController" />
-    <MESSAGE value="settings page en terug naar main" />
-    <MESSAGE value="back button plaatje" />
-    <MESSAGE value="onthou tabcount en gesprekgeschiedenis" />
-    <option name="LAST_COMMIT_MESSAGE" value="onthou tabcount en gesprekgeschiedenis" />
+    <option name="LAST_COMMIT_MESSAGE" value="variable" />
   </component>
 </project>
