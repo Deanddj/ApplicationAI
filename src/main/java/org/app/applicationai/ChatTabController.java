@@ -40,7 +40,8 @@ public class ChatTabController {
     @FXML
     private void sendPrompt() {
         String userPrompt = inputTextArea.getText();
-        chatTextArea.appendText("User: " + userPrompt + "\n");
+
+        chatTextArea.appendText("User: " + userPrompt + "\n\n");
         Set<String> overlappingKeywords = filterKeywords(userPrompt);
         List<String> keywords = new ArrayList<>(overlappingKeywords);
         // Hier zou de logica komen voor het verzenden van de prompt naar de AI-assistent
@@ -50,7 +51,9 @@ public class ChatTabController {
 
         new Thread(() -> {
             documentatie = Elasticsearch.startElasticSearch(keywords);
+            chatTextArea.appendText("AI: ");
             API.starAI(userPrompt, documentatie, chatTextArea);
+            chatTextArea.appendText("\n\n");
         }).start();
 
 
@@ -85,7 +88,6 @@ public class ChatTabController {
                 overlappingKeywords.add(keyword);
             }
         }
-
         return overlappingKeywords;
     }
 

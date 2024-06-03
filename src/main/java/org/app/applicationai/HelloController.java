@@ -10,40 +10,37 @@ import javafx.scene.layout.AnchorPane;
 import org.app.applicationai.ChatTabController;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class HelloController {
+public class HelloController implements LanguageObserver {
+
     @FXML
-    private Button button_logout;
+    private Button button_instellingen;
+
+    @FXML
+    private Button button_uitloggen;
 
     @FXML
     private Button button_new_chat;
-    @FXML
-    private Button button_settings;
-
-/*
-    @FXML
-    private ComboBox <String> languageComboBox;*/
-
-    private String selectedLanguage = "English";
-
 
     @FXML
     private TabPane tabPane;
 
-    private int tabCount = 1;
-    private final ArrayList<Tab> openTabs = new ArrayList<>();
+    private int tabCount = 1; // Begin met één chat-tab
+
+    private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
 
     @FXML
     public void initialize() {
+        // Laad de initiële chat-tab
         loadInitialChatTab();
-        button_settings.setOnAction(event -> loadSettings());
-        button_logout.setOnAction(event -> loadLogin());
+        button_instellingen.setOnAction(event -> loadSettings());
+        System.out.println(languageSubject);
+        languageSubject.addObserver(this);
+        loadLanguage();
     }
 
     @FXML
     private void loadInitialChatTab() {
-
         addNewTab(new ActionEvent());
     }
 
@@ -57,7 +54,7 @@ public class HelloController {
 
             Tab newTab = new Tab("Chat " + tabCount, chatTabContent);
             tabPane.getTabs().add(newTab);
-            openTabs.add(newTab);
+
             tabCount++;
         } catch (IOException e) {
             e.printStackTrace();
@@ -67,14 +64,25 @@ public class HelloController {
 
     @FXML
     public void loadSettings() {
-        saveOpenTabs();
         HelloApplication.switchScene("Settings.fxml");
     }
-    @FXML
-    public void loadLogin() {
-        saveOpenTabs();
-        HelloApplication.switchScene("login-screen.fxml");
+
+    @Override
+    public void applyLanguageChanges(String selectedLanguage) {
+        if ("Dutch".equals(selectedLanguage) || "Nederlands".equals(selectedLanguage)) {
+            button_instellingen.setText("      Instellingen");
+            button_uitloggen.setText("    Uitloggen");
+        } else {
+            button_instellingen.setText("      Settings");
+            button_uitloggen.setText("    Logout");
+        }
     }
+
+    private void loadLanguage() {
+        String selectedLanguage = languageSubject.getCurrentLanguage();
+        applyLanguageChanges(selectedLanguage);
+    }
+
     /*@FXML
     private void updateLanguage(ActionEvent event) {
         selectedLanguage = languageComboBox.getValue();
@@ -85,18 +93,4 @@ public class HelloController {
             }
         }
     }*/
-    private void saveOpenTabs() {
-        openTabs.clear();
-        openTabs.addAll(tabPane.getTabs());
-    }
-
-    private void restoreOpenTabs() {
-        tabPane.getTabs().clear();
-        tabPane.getTabs().addAll(openTabs);
-    }
-
-    public void loadOpenTabs() {
-        restoreOpenTabs();
-    }
 }
-
