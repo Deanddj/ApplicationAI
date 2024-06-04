@@ -9,6 +9,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class TEST_startLoginScreen extends Application {
     private static ArrayList<User> users;
@@ -33,13 +34,10 @@ public class TEST_startLoginScreen extends Application {
 
     // Tijdelijke methoden om de login functie te testen
     public static void initialize() {
+        UserManager manager = new UserManager();
+        User user = manager.loadUserData();
         users = new ArrayList<>();
-        User user1 = new User("test@gmail.com", "test");
-        User user2 = new User("test@outlook.com", "test");
-        User user3 = new User("test@hhs.nl", "test");
-        users.add(user1);
-        users.add(user2);
-        users.add(user3);
+        users.add(user);
     }
 
     public static ArrayList<User> getUsers() {

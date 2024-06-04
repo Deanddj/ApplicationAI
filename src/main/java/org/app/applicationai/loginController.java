@@ -2,6 +2,7 @@ package org.app.applicationai;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -35,6 +36,8 @@ public class loginController {
             if (usernameTextField.getText().equals(user.getEmail())) {
                 if (passwordPasswordField.getText().equals(user.getPassword())) {
                     System.out.println("U heeft toegang (Email: " + user.getEmail() +" - Wachtwoord: " + user.getPassword() + ")");
+                    Stage currentStage = (Stage) cancelButton.getScene().getWindow();
+                    SceneManager.switchScene("hello-view.fxml", currentStage);
                 }
             }
         }

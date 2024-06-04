@@ -6,11 +6,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.applicationai.HelloController">
+<AnchorPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-radius: 30px; -fx-border-radius: 30px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.applicationai.HelloController">
     <children>
-        <Button fx:id="button_new_chat" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#addNewTab" prefHeight="25.0" prefWidth="122.0" text="New Chat" />
         <SplitPane dividerPositions="0.2" layoutX="0.0" layoutY="50.0" prefHeight="550.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="200.0">
@@ -34,6 +34,7 @@
                         <Image url="@../../../images/settings%20(1).png" />
                      </image>
                   </ImageView>
+                    <Button fx:id="button_new_chat" layoutX="26.0" layoutY="17.0" mnemonicParsing="false" onAction="#addNewTab" prefHeight="25.0" prefWidth="122.0" text="New Chat" />
                     </children>
                 </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="600.0">
@@ -43,5 +44,20 @@
                 </AnchorPane>
             </items>
         </SplitPane>
+      <AnchorPane fx:id="topPane" onMouseDragged="#topPaneOnDragged" onMousePressed="#topPaneOnPressed" prefHeight="50.0" prefWidth="790.0" style="-fx-background-radius: 30px; -fx-border-radius: 30px;">
+         <children>
+            <Rectangle fill="#0000000d" height="40.0" layoutY="-5.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="802.0" />
+            <Button fx:id="cancelButton" layoutX="751.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: transparant;" styleClass="cancelButton" stylesheets="@../../../css/stylesheet.css" text="X">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="minimizeButton" layoutX="723.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#minimizeButtonOnAction" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: transparant;" styleClass="minimizeButton" stylesheets="@../../../css/stylesheet.css" text="━">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
     </children>
 </AnchorPane>

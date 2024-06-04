@@ -3,10 +3,11 @@ package org.app.applicationai;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.app.applicationai.ChatTabController;
 
 import java.io.IOException;
@@ -15,6 +16,11 @@ import java.util.ArrayList;
 public class HelloController implements LanguageObserver {
 
     @FXML
+    private Button cancelButton, minimizeButton;
+
+    private double xOffset = 0;
+    private double yOffset = 0;
+    @FXML
     private Button button_instellingen;
 
     @FXML
@@ -22,6 +28,8 @@ public class HelloController implements LanguageObserver {
 
     @FXML
     private Button button_new_chat;
+    @FXML
+    private AnchorPane topPane;
 
     @FXML
     private TabPane tabPane;
@@ -32,11 +40,12 @@ public class HelloController implements LanguageObserver {
 
     private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
 
+    private Stage currentStage;
+    private static Scene chatScene;
     @FXML
     public void initialize() {
         // Laad de initiële chat-tab
         loadInitialChatTab();
-
         button_instellingen.setOnAction(event -> loadSettings());
         button_uitloggen.setOnAction(event -> loadLogin());
 
@@ -80,12 +89,14 @@ public class HelloController implements LanguageObserver {
     @FXML
     public void loadSettings() {
         saveOpenTabs();
-        HelloApplication.switchScene("Settings.fxml");
+        currentStage = (Stage) cancelButton.getScene().getWindow();
+        SceneManager.switchScene("Settings.fxml", currentStage);
     }
     @FXML
     public void loadLogin() {
         saveOpenTabs();
-        HelloApplication.switchScene("login-screen.fxml");
+        currentStage = (Stage) cancelButton.getScene().getWindow();
+        SceneManager.switchScene("login-screen.fxml", currentStage);
     }
 
     private void saveOpenTabs() {
@@ -118,5 +129,27 @@ public class HelloController implements LanguageObserver {
     private void loadLanguage() {
         String selectedLanguage = languageSubject.getCurrentLanguage();
         applyLanguageChanges(selectedLanguage);
+    }
+
+    public void cancelButtonOnAction (ActionEvent e) {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+    }
+
+    public void minimizeButtonOnAction (ActionEvent e) {
+        Stage stage = (Stage) minimizeButton.getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    /* Een sleep functie van de GUI om het scherm te verplaatsen */
+    public void topPaneOnDragged(javafx.scene.input.MouseEvent mouseEvent) {
+        Stage stage = (Stage) topPane.getScene().getWindow();
+        stage.setY(mouseEvent.getScreenY() - yOffset);
+        stage.setX(mouseEvent.getScreenX() - xOffset);
+    }
+
+    public void topPaneOnPressed(javafx.scene.input.MouseEvent mouseEvent) {
+        xOffset = mouseEvent.getSceneX();
+        yOffset = mouseEvent.getSceneY();
     }
 }
