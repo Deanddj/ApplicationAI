@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="language interface uitgebreid, engels vragen stellen en antwoorden">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2024_12_48_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2024_12_48_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/LanguageObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/LanguageObserver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/changeuser.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/changeuser.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/elasticsearch.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/elasticsearch.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,8 +130,8 @@
       <list>
         <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.TEST_startLoginScreen" />
-        <item itemvalue="Application.API" />
         <item itemvalue="Application.Elasticsearch" />
+        <item itemvalue="Application.API" />
         <item itemvalue="Application.TEST_startLoginScreen" />
       </list>
     </recent_temporary>
@@ -222,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717414500921</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="language interface uitgebreid, engels vragen stellen en antwoorden">
+      <option name="closed" value="true" />
+      <created>1717673550656</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717673550656</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +262,7 @@
     <MESSAGE value="text wrap" />
     <MESSAGE value="language knop fix" />
     <MESSAGE value="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language" />
+    <MESSAGE value="language interface uitgebreid, engels vragen stellen en antwoorden" />
+    <option name="LAST_COMMIT_MESSAGE" value="language interface uitgebreid, engels vragen stellen en antwoorden" />
   </component>
 </project>
