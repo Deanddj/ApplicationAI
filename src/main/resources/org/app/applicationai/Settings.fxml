@@ -8,9 +8,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.applicationai.SettingsController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-padding: 0; -fx-background-radius: 30px; -fx-border-radius: 30px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.applicationai.SettingsController">
    <children>
       <Label layoutX="189.0" layoutY="171.0" prefHeight="45.0" prefWidth="125.0" text="E-Mail">
          <font>
@@ -22,7 +23,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="113.0" fitWidth="200.0" layoutX="347.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="113.0" fitWidth="200.0" layoutX="347.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/settings.png" />
          </image>
@@ -39,14 +40,14 @@
             <Font name="Arial Rounded MT Bold" size="18.0" />
          </font>
       </Button>
-      <ImageView fitHeight="59.0" fitWidth="63.0" layoutX="44.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="59.0" fitWidth="63.0" layoutX="42.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/back.png" />
          </image>
       </ImageView>
-      <Button fx:id="button_back" layoutX="44.0" layoutY="50.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="59.0" style="-fx-background-color: transparent;" />
-      <ComboBox fx:id="languageComboBox" layoutX="593.0" layoutY="57.0" onAction="#handleComboBoxAction" prefHeight="25.0" prefWidth="185.0" promptText="Nederlands" visibleRowCount="2" />
-      <Label fx:id="language" layoutX="591.0" layoutY="19.0" prefHeight="44.0" prefWidth="195.0" text="Kies je taal">
+      <Button fx:id="button_back" layoutX="42.0" layoutY="71.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="59.0" style="-fx-background-color: transparent;" />
+      <ComboBox fx:id="languageComboBox" layoutX="593.0" layoutY="83.0" onAction="#handleComboBoxAction" prefHeight="25.0" prefWidth="185.0" promptText="Nederlands" visibleRowCount="2" />
+      <Label fx:id="language" layoutX="591.0" layoutY="45.0" prefHeight="44.0" prefWidth="195.0" text="Kies je taal">
          <font>
             <Font name="Arial Bold" size="17.0" />
          </font>
@@ -61,5 +62,20 @@
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Label>
+      <AnchorPane fx:id="topPane" onMouseDragged="#topPaneOnDragged" onMousePressed="#topPaneOnPressed" prefHeight="50.0" prefWidth="790.0" style="-fx-background-radius: 30px; -fx-border-radius: 30px;">
+         <children>
+            <Rectangle fill="#0000000d" height="40.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="802.0" />
+            <Button fx:id="cancelButton" layoutX="751.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: transparant;" styleClass="cancelButton" stylesheets="@../../../css/stylesheet.css" text="X">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="minimizeButton" layoutX="723.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#minimizeButtonOnAction" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: transparant;" styleClass="minimizeButton" stylesheets="@../../../css/stylesheet.css" text="━">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

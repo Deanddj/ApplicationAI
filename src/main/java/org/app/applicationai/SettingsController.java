@@ -4,6 +4,8 @@ package org.app.applicationai;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -13,6 +15,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class SettingsController implements LanguageObserver {
+
+    @FXML
+    private Button cancelButton, minimizeButton;
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     @FXML
     private Label language;
@@ -43,6 +50,9 @@ public class SettingsController implements LanguageObserver {
 
     @FXML
     private ComboBox<String> languageComboBox;
+
+    @FXML
+    private AnchorPane topPane;
 
     private User user;
     private UserManager userManager;
@@ -142,5 +152,27 @@ public class SettingsController implements LanguageObserver {
 
     private boolean checkPassword(String password) {
         return password.length() >= 6;
+    }
+
+    public void cancelButtonOnAction (ActionEvent e) {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+    }
+
+    public void minimizeButtonOnAction (ActionEvent e) {
+        Stage stage = (Stage) minimizeButton.getScene().getWindow();
+        stage.setIconified(true);
+    }
+
+    /* Een sleep functie van de GUI om het scherm te verplaatsen */
+    public void topPaneOnDragged(javafx.scene.input.MouseEvent mouseEvent) {
+        Stage stage = (Stage) topPane.getScene().getWindow();
+        stage.setY(mouseEvent.getScreenY() - yOffset);
+        stage.setX(mouseEvent.getScreenX() - xOffset);
+    }
+
+    public void topPaneOnPressed(javafx.scene.input.MouseEvent mouseEvent) {
+        xOffset = mouseEvent.getSceneX();
+        yOffset = mouseEvent.getSceneY();
     }
 }

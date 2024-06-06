@@ -28,6 +28,7 @@ public class HelloController implements LanguageObserver {
 
     @FXML
     private Button button_new_chat;
+
     @FXML
     private AnchorPane topPane;
 

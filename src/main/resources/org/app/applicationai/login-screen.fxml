@@ -73,15 +73,15 @@
         </AnchorPane>
     </right>
    <top>
-          <AnchorPane fx:id="topPane" onMouseDragged="#topPaneOnDragged" onMousePressed="#topPaneOnPressed" prefHeight="50.0" prefWidth="790.0" style="-fx-background-radius: 30px; -fx-border-radius: 30px;" BorderPane.alignment="CENTER">
+          <AnchorPane fx:id="topPane" onMouseDragged="#topPaneOnDragged" onMousePressed="#topPaneOnPressed" prefHeight="50.0" prefWidth="800.0" style="-fx-background-radius: 30px; -fx-border-radius: 30px;" BorderPane.alignment="CENTER">
               <children>
-            <Rectangle fill="#0000000d" height="40.0" layoutY="-8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
-                  <Button fx:id="cancelButton" layoutX="751.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: transparant;" styleClass="cancelButton" stylesheets="@../../../css/stylesheet.css" text="X">
+            <Rectangle fill="#0000000d" height="40.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" />
+                  <Button fx:id="cancelButton" layoutX="751.0" layoutY="-6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: transparant;" styleClass="cancelButton" stylesheets="@../../../css/stylesheet.css" text="X">
                       <font>
                           <Font name="System Bold" size="15.0" />
                       </font>
                   </Button>
-            <Button fx:id="minimizeButton" layoutX="723.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#minimizeButtonOnAction" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: transparant;" styleClass="minimizeButton" stylesheets="@../../../css/stylesheet.css" text="━">
+            <Button fx:id="minimizeButton" layoutX="723.0" layoutY="-5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#minimizeButtonOnAction" prefHeight="29.0" prefWidth="42.0" style="-fx-background-color: transparant;" styleClass="minimizeButton" stylesheets="@../../../css/stylesheet.css" text="━">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
