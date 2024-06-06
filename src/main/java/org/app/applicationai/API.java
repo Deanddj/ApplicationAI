@@ -26,7 +26,8 @@ public class API {
     public static void starAI(String userPrompt, String documentatie, TextArea chat){
 
         // API-object aanmaken
-        API api = new API("localhost", "gemma");
+        // 158.178.151.211 (Deze server kan ook worden gebruikt)
+        API api = new API("158.178.151.211", "gemma");
 
         // Een vraag stellen aan de AI
         api.connect("Halo. Ik wil graag dat je mijn vraag beantwoordt met behulp van documentatie dat ik je stuur, let op dat je het antwoordt stuurt in de taal van elke nieuwe vraag die ik je stuur. Het antwoord wat je stuurt komt in een textarea van javafx dus onthoud dit bij de opmaak van je antwoord. Geef het antwoord ook alsof iemand de vraag direct aan jou stelt en je de informatie van de documentatie al wist. Dit is de vraag:" + userPrompt+ ". En dit is de documentatie: " + documentatie +".", chat);

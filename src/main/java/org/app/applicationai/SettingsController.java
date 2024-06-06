@@ -53,7 +53,6 @@ public class SettingsController implements LanguageObserver {
 
     @FXML
     private AnchorPane topPane;
-
     private User user;
     private UserManager userManager;
     String user_file = "src/main/resources/org/app/applicationai/changeuser.json";
@@ -113,12 +112,13 @@ public class SettingsController implements LanguageObserver {
         if (!newEmail.isEmpty() && checkEmail(newEmail)) {
             user.updateEmail(newEmail);
             userManager.saveUserData();
-            if (selectedLanguage.equals("Nederlands")) {
-                label_wijzigEmail.setText("Veranderd: " + newEmail);
-            }
-            else {
-                label_wijzigEmail.setText("Changed: " + newEmail);
-            }
+//            if (selectedLanguage.equals("Nederlands")) {
+//                label_wijzigEmail.setText("Veranderd: " + newEmail);
+//            }
+//            else {
+//                label_wijzigEmail.setText("Changed: " + newEmail);
+//            }
+            label_wijzigEmail.setText("✓");
         } else {
             if (selectedLanguage.equals("Nederlands")) {
                 label_wijzigEmail.setText("Ongeldig e-mail: " + newEmail);
@@ -135,7 +135,7 @@ public class SettingsController implements LanguageObserver {
         if (!newPassword.isEmpty() && checkPassword(newPassword)) {
             user.updatePassword(newPassword);
             userManager.saveUserData();
-            label_wijzigPassword.setText("Wachtwoord veranderd");
+            label_wijzigPassword.setText("✓");
         } else {
             label_wijzigPassword.setText("Ongeldig wachtwoord");
         }

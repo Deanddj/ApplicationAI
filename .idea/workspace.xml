@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="UI design aangepast">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/image-removebg-preview.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/output-onlinepngtools.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/API.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/css/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/changeuser.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/changeuser.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/chat-tab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/chat-tab.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,9 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -27,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="Developer2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,6 +46,9 @@
         <option name="mavenHome" value="Use Maven wrapper" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -51,26 +62,32 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.API.executor": "Run",
+    "Application.Elasticsearch.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.TEST_startLoginScreen.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "Developer2",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/aliha/AppData/Local/SceneBuilder/SceneBuilder.exe",
+    "last_opened_file_path": "C:/Users/deanj/IdeaProjects/Application",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\aliha\Documents\School Opdrachten\ApplicationAI\src\main\resources\images" />
+      <recent name="C:\Users\deanj\IdeaProjects\ApplicationAI\src\main\resources\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Application.TEST_startLoginScreen">
     <configuration name="API" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.app.applicationai.API" />
       <module name="ApplicationAI" />
@@ -125,10 +142,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.TEST_startLoginScreen" />
-        <item itemvalue="Application.API" />
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.Elasticsearch" />
+        <item itemvalue="Application.API" />
         <item itemvalue="Application.TEST_startLoginScreen" />
       </list>
     </recent_temporary>
@@ -137,6 +154,7 @@
     <attachedChunks>
       <set>
         <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
   </component>
@@ -149,6 +167,11 @@
       <option name="presentableId" value="Default" />
       <updated>1714465966791</updated>
       <workItem from="1714465967857" duration="6000" />
+      <workItem from="1717433821872" duration="2027000" />
+      <workItem from="1717487294870" duration="7325000" />
+      <workItem from="1717498345277" duration="100000" />
+      <workItem from="1717608884017" duration="1338000" />
+      <workItem from="1717669850548" duration="9310000" />
     </task>
     <task id="LOCAL-00001" summary="message keyword filter added in ChatTabController">
       <option name="closed" value="true" />
@@ -174,47 +197,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716541626458</updated>
     </task>
-    <task id="LOCAL-00004" summary="Klassen verbinden">
+    <task id="LOCAL-00004" summary="Switch scenes + balk bovenaan">
       <option name="closed" value="true" />
-      <created>1716808158392</created>
+      <created>1717494617313</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1716808158392</updated>
+      <updated>1717494617313</updated>
     </task>
-    <task id="LOCAL-00005" summary="text wrap">
+    <task id="LOCAL-00005" summary="UI design aangepast">
       <option name="closed" value="true" />
-      <created>1717070723769</created>
+      <created>1717670890041</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1717070723769</updated>
+      <updated>1717670890041</updated>
     </task>
-    <task id="LOCAL-00006" summary="text wrap">
-      <option name="closed" value="true" />
-      <created>1717075007627</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1717075007627</updated>
-    </task>
-    <task id="LOCAL-00007" summary="language knop fix">
-      <option name="closed" value="true" />
-      <created>1717411759603</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1717411759603</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language">
-      <option name="closed" value="true" />
-      <created>1717414500921</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1717414500921</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +230,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/develop" />
+                        <option value="develop" />
                       </list>
                     </value>
                   </entry>
@@ -247,10 +246,8 @@
     <MESSAGE value="message keyword filter added in ChatTabController" />
     <MESSAGE value="merge" />
     <MESSAGE value="variable" />
-    <MESSAGE value="Klassen verbinden" />
-    <MESSAGE value="text wrap" />
-    <MESSAGE value="language knop fix" />
-    <MESSAGE value="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language" />
+    <MESSAGE value="Switch scenes + balk bovenaan" />
+    <MESSAGE value="UI design aangepast" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI design aangepast" />
   </component>
 </project>
