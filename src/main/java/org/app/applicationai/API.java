@@ -29,7 +29,7 @@ public class API {
         API api = new API("localhost", "gemma");
 
         // Een vraag stellen aan de AI
-        api.connect("Halo. Ik wil graag dat je mijn vraag beantwoordt met behulp van documentatie dat ik je stuur. Het antwoord wat je stuurt komt in een textarea van javafx dus onthoud dit bij de opmaak van je antwoord. Geef het antwoord ook alsof iemand de vraag direct aan jou stelt en je de informatie van de documentatie al wist. Dit is de vraag:" + userPrompt+ ". En dit is de documentatie: " + documentatie +".", chat);
+        api.connect("Halo. Ik wil graag dat je mijn vraag beantwoordt met behulp van documentatie dat ik je stuur, let op dat je het antwoordt stuurt in de taal van elke nieuwe vraag die ik je stuur. Het antwoord wat je stuurt komt in een textarea van javafx dus onthoud dit bij de opmaak van je antwoord. Geef het antwoord ook alsof iemand de vraag direct aan jou stelt en je de informatie van de documentatie al wist. Dit is de vraag:" + userPrompt+ ". En dit is de documentatie: " + documentatie +".", chat);
     }
 
     private final String host;

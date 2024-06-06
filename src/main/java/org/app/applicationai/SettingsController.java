@@ -83,7 +83,8 @@ public class SettingsController implements LanguageObserver {
         languageSubject.setCurrentLanguage(selectedLanguage); // Wijzig en sla de nieuwe taal op
     }
 
-    private String loadLanguage() {
+    @Override
+    public String loadLanguage() {
         String selectedLanguage = languageSubject.getCurrentLanguage();
         return selectedLanguage;
     }

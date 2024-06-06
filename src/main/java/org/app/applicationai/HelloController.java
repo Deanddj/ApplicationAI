@@ -51,7 +51,8 @@ public class HelloController implements LanguageObserver {
         button_uitloggen.setOnAction(event -> loadLogin());
 
         languageSubject.addObserver(this);
-        loadLanguage();
+        String selectedLanguage = loadLanguage();
+        applyLanguageChanges(selectedLanguage);
     }
 
     @FXML
@@ -127,9 +128,10 @@ public class HelloController implements LanguageObserver {
         }
     }
 
-    private void loadLanguage() {
+    @Override
+    public String loadLanguage() {
         String selectedLanguage = languageSubject.getCurrentLanguage();
-        applyLanguageChanges(selectedLanguage);
+        return selectedLanguage;
     }
 
     public void cancelButtonOnAction (ActionEvent e) {
