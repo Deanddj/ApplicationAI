@@ -16,11 +16,32 @@
     },
     {
       "keywords": [
-        "pauze",
-        "lunch",
-        "break"
+        "pauze"
       ],
       "documentation": "Bij 42 B.V. hebben de meeste medewerkers 2 keer pauze. Dit geldt alleen op een normale werkdag van 8 uur (09:00 tot 17:00), wanneer je deze tijden werkt heb je om 11:00 (15 minuten) en 13:00 (30 minuten) pauze. Andere tijden zijn bijvoorbeeld 12:00-17:00, in dit geval heb je 1 grote pauze van een half uur om 15:00 uur."
+    },
+
+
+
+    {
+      "keywords": [
+        "vacation",
+        "leaveRequest"
+      ],
+      "documentation": "42 B.V. has a vacation starting May 1st that lasts for 2 weeks. This vacation usually runs from the end of April to the beginning of May."
+    },
+    {
+      "keywords": [
+        "resignation",
+        "termination"
+      ],
+      "documentation": "At 42 B.V., you must give at least one month's notice before you want to stop working. You can send an email to the manager (manage@42bv.nl) with a resignation letter. These are only answered on weekdays."
+    },
+    {
+      "keywords": [
+        "break"
+      ],
+      "documentation": "At 42 B.V., most employees have 2 breaks. This only applies to a normal 8-hour workday (09:00 to 17:00), when you work these hours you have a break at 11:00 (15 minutes) and 13:00 (30 minutes). Other hours are for example 12:00-17:00, in this case, you have one long break of half an hour at 15:00."
     }
   ]
 }

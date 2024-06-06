@@ -27,6 +27,7 @@
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -138,9 +139,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="Application.API" />
         <item itemvalue="Application.Elasticsearch" />
-        <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="Application.TEST_startLoginScreen" />
       </list>
     </recent_temporary>
@@ -218,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717411759603</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language">
+      <option name="closed" value="true" />
+      <created>1717414500921</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717414500921</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +263,7 @@
     <MESSAGE value="Klassen verbinden" />
     <MESSAGE value="text wrap" />
     <MESSAGE value="language knop fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="language knop fix" />
+    <MESSAGE value="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language" />
   </component>
 </project>

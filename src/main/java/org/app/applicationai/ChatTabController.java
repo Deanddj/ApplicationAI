@@ -35,11 +35,9 @@ public class ChatTabController implements LanguageObserver{
 
     private boolean tabNameChanged = false;
 
-
     private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
 
     public void ChatTabController (int tabCount){
-
         this.tabCount = tabCount;
     }
     public void setTabCount(int tabCount) {
@@ -50,22 +48,17 @@ public class ChatTabController implements LanguageObserver{
     }
     @FXML
     public void initialize() {
-        // Laad de initiële chat-tab
         languageSubject.addObserver(this);
-        loadLanguage();
-
-
+        String selectedLanguage = loadLanguage();
+        applyLanguageChanges(selectedLanguage);
     }
     @FXML
     private void sendPrompt() {
         String userPrompt = inputTextArea.getText();
-
         chatTextArea.appendText("User: " + userPrompt + "\n\n");
         Set<String> overlappingKeywords = filterKeywords(userPrompt);
         List<String> keywords = new ArrayList<>(overlappingKeywords);
-        // Hier zou de logica komen voor het verzenden van de prompt naar de AI-assistent
-        // en het ontvangen van een reactie, die dan wordt toegevoegd aan chatTextArea
-        // Bijvoorbeeld:
+
         if (!keywords.isEmpty() && !tabNameChanged) {
             helloController.changeTabName(tabCount - 1, keywords.get(0));
             tabNameChanged = true;
@@ -113,11 +106,9 @@ public class ChatTabController implements LanguageObserver{
         }
     }
 
-    private void loadLanguage() {
+    public String loadLanguage() {
         String selectedLanguage = languageSubject.getCurrentLanguage();
-        System.out.println(selectedLanguage);
-        applyLanguageChanges(selectedLanguage);
-
+        return selectedLanguage;
     }
 }
 
