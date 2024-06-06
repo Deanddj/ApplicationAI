@@ -64,7 +64,8 @@ public class ChatTabController implements LanguageObserver{
             tabNameChanged = true;
         }
         new Thread(() -> {
-            documentatie = Elasticsearch.startElasticSearch(keywords);
+
+            documentatie = Elasticsearch.startElasticSearch(keywords) + ResourceSelector.startResourceSelector(keywords);
             chatTextArea.appendText("AI: ");
             API.starAI(userPrompt, documentatie, chatTextArea);
             chatTextArea.appendText("\n\n");
