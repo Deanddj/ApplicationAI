@@ -71,13 +71,15 @@ public class SettingsController implements LanguageObserver {
 
     @FXML
     private void handleComboBoxAction(ActionEvent event) {
-        String selectedLanguage = languageComboBox.getValue();
+        selectedLanguage = languageComboBox.getValue();
         languageSubject.setCurrentLanguage(selectedLanguage);
+        label_wijzigEmail.setText(null);
+        label_wijzigPassword.setText(null);
     }
 
     @Override
     public String loadLanguage() {
-        String selectedLanguage = languageSubject.getCurrentLanguage();
+        selectedLanguage = languageSubject.getCurrentLanguage();
         return selectedLanguage;
     }
 
@@ -134,23 +136,23 @@ public class SettingsController implements LanguageObserver {
         String newPassword = passwordField.getText();
         user = userManager.loadUserData();
         String currentPassport = user.getPassword();
-        label_wijzigEmail.setTextFill(Color.RED);
+        label_wijzigPassword.setTextFill(Color.RED);
 
-        if (newPassword.equals(currentPassport)) {
-            if (selectedLanguage.equals("Nederlands")) {
-                label_wijzigPassword.setText("Nieuwe wachtwoord kan niet zelfde zijn als de oude");
-            }
-            else {
-                label_wijzigPassword.setText("New password can't be the same as old");
-            }
-            return;
-        }
 
         if (!newPassword.isEmpty() && checkPassword(newPassword)) {
+            if (newPassword.equals(currentPassport)) {
+                if (selectedLanguage.equals("Nederlands")) {
+                    label_wijzigPassword.setText("Nieuwe wachtwoord kan niet zelfde zijn als de oude");
+                }
+                else {
+                    label_wijzigPassword.setText("New password can't be the same as old");
+                }
+                return;
+            }
             user.updatePassword(newPassword);
             userManager.saveUserData();
             label_wijzigPassword.setText("✓");
-            label_wijzigEmail.setTextFill(Color.GREEN);
+            label_wijzigPassword.setTextFill(Color.GREEN);
         } else {
             if (selectedLanguage.equals("Nederlands")) {
                 label_wijzigPassword.setText("Ongeldig wachtwoord");
