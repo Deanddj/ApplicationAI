@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="kleine change">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/LanguageSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/LanguageSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/changeuser.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/changeuser.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717763219815</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="kleine change">
+      <option name="closed" value="true" />
+      <created>1717764027921</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717764027921</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

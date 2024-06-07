@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.scene.paint.Color;
 
 public class SettingsController implements LanguageObserver {
 
@@ -50,6 +51,7 @@ public class SettingsController implements LanguageObserver {
     private UserManager userManager;
 
     private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
+    String selectedLanguage = loadLanguage();
 
     public void initialize() {
         userManager = new UserManager();
@@ -64,14 +66,13 @@ public class SettingsController implements LanguageObserver {
         languageComboBox.getItems().addAll("Nederlands", "English");
         languageSubject.addObserver(this);
 
-        String selectedLanguage = loadLanguage();
         applyLanguageChanges(selectedLanguage);
     }
 
     @FXML
     private void handleComboBoxAction(ActionEvent event) {
         String selectedLanguage = languageComboBox.getValue();
-        languageSubject.setCurrentLanguage(selectedLanguage); // Wijzig en sla de nieuwe taal op
+        languageSubject.setCurrentLanguage(selectedLanguage);
     }
 
     @Override
@@ -99,9 +100,9 @@ public class SettingsController implements LanguageObserver {
     @FXML
     public void handleChangeEmail() {
         String newEmail = emailField.getText();
-        String selectedLanguage = loadLanguage();
         user = userManager.loadUserData();
         String currentEmail = user.getEmail();
+        label_wijzigEmail.setTextFill(Color.RED);
 
         if (!newEmail.isEmpty() && checkEmail(newEmail)) {
             if (newEmail.equals(currentEmail)) {
@@ -116,12 +117,8 @@ public class SettingsController implements LanguageObserver {
 
             user.updateEmail(newEmail);
             userManager.saveUserData();
-            if (selectedLanguage.equals("Nederlands")) {
-                label_wijzigEmail.setText("Veranderd: " + newEmail);
-            }
-            else {
-                label_wijzigEmail.setText("Changed: " + newEmail);
-            }
+            label_wijzigEmail.setText("✓");
+            label_wijzigEmail.setTextFill(Color.GREEN);
         } else {
             if (selectedLanguage.equals("Nederlands")) {
                 label_wijzigEmail.setText("Ongeldig e-mail: " + newEmail);
@@ -135,10 +132,9 @@ public class SettingsController implements LanguageObserver {
     @FXML
     public void handleChangePassword() {
         String newPassword = passwordField.getText();
-        String selectedLanguage = loadLanguage();
-
         user = userManager.loadUserData();
         String currentPassport = user.getPassword();
+        label_wijzigEmail.setTextFill(Color.RED);
 
         if (newPassword.equals(currentPassport)) {
             if (selectedLanguage.equals("Nederlands")) {
@@ -153,17 +149,12 @@ public class SettingsController implements LanguageObserver {
         if (!newPassword.isEmpty() && checkPassword(newPassword)) {
             user.updatePassword(newPassword);
             userManager.saveUserData();
-            if (selectedLanguage.equals("Nederlands")) {
-                label_wijzigPassword.setText("Wachtwoord veranderd");
-            }
-            else {
-                label_wijzigPassword.setText("Password changed");
-            }
+            label_wijzigPassword.setText("✓");
+            label_wijzigEmail.setTextFill(Color.GREEN);
         } else {
             if (selectedLanguage.equals("Nederlands")) {
                 label_wijzigPassword.setText("Ongeldig wachtwoord");
-            }
-            else {
+            } else {
                 label_wijzigPassword.setText("Invalid password");
             }
         }
