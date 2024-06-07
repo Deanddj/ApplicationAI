@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class loginController {
+public class loginController extends Controller {
     @FXML
     private AnchorPane topPane;
     @FXML
@@ -62,5 +62,10 @@ public class loginController {
     public void topPaneOnPressed(javafx.scene.input.MouseEvent mouseEvent) {
         xOffset = mouseEvent.getSceneX();
         yOffset = mouseEvent.getSceneY();
+    }
+
+    @Override
+    public void initialize() {
+
     }
 }

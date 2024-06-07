@@ -9,7 +9,7 @@ import javafx.scene.text.FontWeight;
 
 import java.util.*;
 
-public class ChatTabController implements LanguageObserver{
+public class ChatTabController extends Controller implements LanguageObserver{
 
     @FXML
     private Button button_send;
@@ -47,6 +47,7 @@ public class ChatTabController implements LanguageObserver{
         this.helloController = helloController;
     }
     @FXML
+    @Override
     public void initialize() {
         languageSubject.addObserver(this);
         String selectedLanguage = loadLanguage();

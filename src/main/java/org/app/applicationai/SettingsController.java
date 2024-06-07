@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class SettingsController implements LanguageObserver {
+public class SettingsController extends Controller implements LanguageObserver {
 
     @FXML
     private Button cancelButton, minimizeButton;
