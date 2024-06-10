@@ -6,13 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.json.JSONObject;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import javafx.scene.paint.Color;
 
 public class SettingsController implements LanguageObserver {
 
@@ -53,12 +47,11 @@ public class SettingsController implements LanguageObserver {
 
     @FXML
     private AnchorPane topPane;
-
     private User user;
     private UserManager userManager;
-    String user_file = "src/main/resources/org/app/applicationai/changeuser.json";
 
     private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
+    String selectedLanguage = loadLanguage();
 
     public void initialize() {
         userManager = new UserManager();
@@ -70,22 +63,23 @@ public class SettingsController implements LanguageObserver {
 
         button_back.setOnAction(event -> handleBack());
 
-        languageComboBox.getItems().addAll("Nederlands", "Engels");
+        languageComboBox.getItems().addAll("Nederlands", "English");
         languageSubject.addObserver(this);
 
-        String selectedLanguage = loadLanguage();
         applyLanguageChanges(selectedLanguage);
     }
 
     @FXML
     private void handleComboBoxAction(ActionEvent event) {
-        String selectedLanguage = languageComboBox.getValue();
-        languageSubject.setCurrentLanguage(selectedLanguage); // Wijzig en sla de nieuwe taal op
+        selectedLanguage = languageComboBox.getValue();
+        languageSubject.setCurrentLanguage(selectedLanguage);
+        label_wijzigEmail.setText(null);
+        label_wijzigPassword.setText(null);
     }
 
     @Override
     public String loadLanguage() {
-        String selectedLanguage = languageSubject.getCurrentLanguage();
+        selectedLanguage = languageSubject.getCurrentLanguage();
         return selectedLanguage;
     }
 
@@ -108,17 +102,25 @@ public class SettingsController implements LanguageObserver {
     @FXML
     public void handleChangeEmail() {
         String newEmail = emailField.getText();
-        String selectedLanguage = loadLanguage();
+        user = userManager.loadUserData();
+        String currentEmail = user.getEmail();
+        label_wijzigEmail.setTextFill(Color.RED);
 
         if (!newEmail.isEmpty() && checkEmail(newEmail)) {
+            if (newEmail.equals(currentEmail)) {
+                if (selectedLanguage.equals("Nederlands")) {
+                    label_wijzigEmail.setText("Nieuwe email kan niet zelfde zijn als de oude");
+                }
+                else {
+                    label_wijzigEmail.setText("New email can't be the same as old");
+                }
+                return;
+            }
+
             user.updateEmail(newEmail);
             userManager.saveUserData();
-            if (selectedLanguage.equals("Nederlands")) {
-                label_wijzigEmail.setText("Veranderd: " + newEmail);
-            }
-            else {
-                label_wijzigEmail.setText("Changed: " + newEmail);
-            }
+            label_wijzigEmail.setText("✓");
+            label_wijzigEmail.setTextFill(Color.GREEN);
         } else {
             if (selectedLanguage.equals("Nederlands")) {
                 label_wijzigEmail.setText("Ongeldig e-mail: " + newEmail);
@@ -132,18 +134,36 @@ public class SettingsController implements LanguageObserver {
     @FXML
     public void handleChangePassword() {
         String newPassword = passwordField.getText();
+        user = userManager.loadUserData();
+        String currentPassport = user.getPassword();
+        label_wijzigPassword.setTextFill(Color.RED);
+
+
         if (!newPassword.isEmpty() && checkPassword(newPassword)) {
+            if (newPassword.equals(currentPassport)) {
+                if (selectedLanguage.equals("Nederlands")) {
+                    label_wijzigPassword.setText("Nieuwe wachtwoord kan niet zelfde zijn als de oude");
+                }
+                else {
+                    label_wijzigPassword.setText("New password can't be the same as old");
+                }
+                return;
+            }
             user.updatePassword(newPassword);
             userManager.saveUserData();
-            label_wijzigPassword.setText("Wachtwoord veranderd");
+            label_wijzigPassword.setText("✓");
+            label_wijzigPassword.setTextFill(Color.GREEN);
         } else {
-            label_wijzigPassword.setText("Ongeldig wachtwoord");
+            if (selectedLanguage.equals("Nederlands")) {
+                label_wijzigPassword.setText("Ongeldig wachtwoord");
+            } else {
+                label_wijzigPassword.setText("Invalid password");
+            }
         }
     }
 
     @FXML
     public void handleBack() {
-
         SceneManager.goToChatScene();
     }
 

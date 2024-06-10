@@ -22,3 +22,14 @@
 .hyperlink:hover {
     -fx-text-fill: #65ae98;
 }
+
+.mainButtons {
+    -fx-background-radius: 10px;
+    -fx-background-color:  #ababab;
+    /*-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 8, 0.3, 2, 2);*/
+}
+
+.mainButtons:hover {
+    -fx-background-color: #bdbdbd;
+    /*-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 9, 0.4, 3, 3);*/
+}

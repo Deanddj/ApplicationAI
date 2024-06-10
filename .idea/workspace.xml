@@ -20,6 +20,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ResourceSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ResourceSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceselector.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourcetest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceSelector.json" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,7 @@
         <option value="Class" />
         <option value="FxmlFile" />
         <option value="JUnit5 Test Class" />
+
       </list>
     </option>
   </component>
@@ -43,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,11 +57,16 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2foSW5NnVhdvZkRaO22MBL8vx4N" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -81,11 +88,12 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\aliha\Documents\School Opdrachten\ApplicationAI\src\main\resources\images" />
+      <recent name="C:\Users\deanj\IdeaProjects\ApplicationAI\src\main\resources\images" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -97,7 +105,7 @@
       <recent name="org.app.applicationai" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager" selected="Application.TEST_startLoginScreen">
     <configuration name="API" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.app.applicationai.API" />
       <module name="ApplicationAI" />
@@ -176,6 +184,7 @@
         <item itemvalue="JUnit.ResourceSelectorTest.getKeywordTest" />
         <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="Application.API" />
+
       </list>
     </recent_temporary>
   </component>
@@ -183,6 +192,7 @@
     <attachedChunks>
       <set>
         <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
   </component>
@@ -195,6 +205,11 @@
       <option name="presentableId" value="Default" />
       <updated>1714465966791</updated>
       <workItem from="1714465967857" duration="6000" />
+      <workItem from="1717433821872" duration="2027000" />
+      <workItem from="1717487294870" duration="7325000" />
+      <workItem from="1717498345277" duration="100000" />
+      <workItem from="1717608884017" duration="1338000" />
+      <workItem from="1717669850548" duration="9416000" />
     </task>
     <task id="LOCAL-00001" summary="message keyword filter added in ChatTabController">
       <option name="closed" value="true" />
@@ -220,47 +235,71 @@
       <option name="project" value="LOCAL" />
       <updated>1716541626458</updated>
     </task>
-    <task id="LOCAL-00004" summary="Klassen verbinden">
+    <task id="LOCAL-00004" summary="Switch scenes + balk bovenaan">
       <option name="closed" value="true" />
-      <created>1716808158392</created>
+      <created>1717494617313</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1716808158392</updated>
+      <updated>1717494617313</updated>
     </task>
-    <task id="LOCAL-00005" summary="text wrap">
+    <task id="LOCAL-00005" summary="UI design aangepast">
       <option name="closed" value="true" />
-      <created>1717070723769</created>
+      <created>1717670890041</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1717070723769</updated>
+      <updated>1717670890041</updated>
     </task>
-    <task id="LOCAL-00006" summary="text wrap">
+    <task id="LOCAL-00006" summary="UI design aangepast #2">
       <option name="closed" value="true" />
-      <created>1717075007627</created>
+      <created>1717679539335</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1717075007627</updated>
+      <updated>1717679539335</updated>
     </task>
-    <task id="LOCAL-00007" summary="language knop fix">
+    <task id="LOCAL-00007" summary="kleine change">
       <option name="closed" value="true" />
-      <created>1717411759603</created>
+      <created>1717761207902</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1717411759603</updated>
+      <updated>1717761207902</updated>
     </task>
-    <task id="LOCAL-00008" summary="Ibo tabs geschiedenis en password/email wijzigen + jason gemerged met ali language">
+    <task id="LOCAL-00008" summary="kleine change">
       <option name="closed" value="true" />
-      <created>1717414500921</created>
+      <created>1717761236096</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1717414500921</updated>
+      <updated>1717761236096</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="kleine change">
+      <option name="closed" value="true" />
+      <created>1717763219815</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717763219815</updated>
+    </task>
+    <task id="LOCAL-00010" summary="kleine change">
+      <option name="closed" value="true" />
+      <created>1717764027921</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717764027921</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Groen/Rood email &amp; pass change + selectedLanguage">
+      <option name="closed" value="true" />
+      <created>1717766541083</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717766541083</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +332,7 @@
                     <value>
                       <list>
                         <option value="origin/develop2" />
+
                       </list>
                     </value>
                   </entry>
