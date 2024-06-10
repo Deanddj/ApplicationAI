@@ -24,10 +24,11 @@ public class ChatTabController implements LanguageObserver{
 
     private String userMessage;
 
-    private String documentatie;
+    private String documentatie1;
+    private String documentatie2;
 
-    private static final List<String> PREDEFINED_KEYWORDS = Elasticsearch.getKeywords("src/main/resources/org/app/applicationai/elasticsearch.json");
-
+    private static final List<String> PREDEFINED_KEYWORDS_ELASTICSEARCH = Elasticsearch.getKeywords("src/main/resources/org/app/applicationai/elasticsearch.json");
+    private static final List<String> PREDEFINED_KEYWORDS_RESOURCESELECTOR = ResourceSelector.getKeywords("src/main/resources/org/app/applicationai/resourceSelector.json");
     private HelloController helloController;
 
     private int tabCount;
@@ -55,30 +56,61 @@ public class ChatTabController implements LanguageObserver{
     private void sendPrompt() {
         String userPrompt = inputTextArea.getText();
         chatTextArea.appendText("User: " + userPrompt + "\n\n");
-        Set<String> overlappingKeywords = filterKeywords(userPrompt);
+        Set<String> overlappingKeywords = filterKeywords(userPrompt,PREDEFINED_KEYWORDS_ELASTICSEARCH);
+        Set<String> overlappingKeywords2 = filterKeywords(userPrompt,PREDEFINED_KEYWORDS_RESOURCESELECTOR);
+        System.out.println("Overlappende keywords1: " + overlappingKeywords);
+        System.out.println("Overlappende keywords2: " + overlappingKeywords2);
+        //overlappingKeywords.addAll(overlappingKeywords2);
         List<String> keywords = new ArrayList<>(overlappingKeywords);
+        List<String> keywords2 = new ArrayList<>(overlappingKeywords2);
 
-        if (!keywords.isEmpty() && !tabNameChanged) {
-            helloController.changeTabName(tabCount - 1, keywords.get(0));
+        List<Set<String>> listOfSets = new ArrayList<>();
+        if (!overlappingKeywords.isEmpty()) {
+            listOfSets.add(overlappingKeywords);
+        }
+
+        if (!overlappingKeywords2.isEmpty()) {
+            listOfSets.add(overlappingKeywords2);
+        }
+
+        System.out.println("Totale Set lijst: "+ listOfSets);
+
+        System.out.println("keywords gepakt uit file1: " + keywords);
+        System.out.println("keywords gepakt uit file2: " + keywords2);
+        if (!keywords.isEmpty() || !keywords2.isEmpty() && !tabNameChanged) {
+            if (!keywords.isEmpty()) {
+                helloController.changeTabName(tabCount - 1, keywords.get(0));
+                System.out.println("keywords 1 is gevuld");
+            }
+            else{
+                helloController.changeTabName(tabCount - 1, keywords2.get(0));
+                System.out.println("keywords 2 is gevuld");
+            }
             tabNameChanged = true;
         }
+
         new Thread(() -> {
-            documentatie = Elasticsearch.startElasticSearch(keywords);
+            documentatie1 = Elasticsearch.startElasticSearch(keywords);
+            documentatie2 = ResourceSelector.startResourceSelector(keywords2);
+            String documentaties =documentatie1.concat(documentatie2);
+            System.out.println(documentaties);
             chatTextArea.appendText("AI: ");
-            API.starAI(userPrompt, documentatie, chatTextArea);
+            API.starAI(userPrompt, documentaties, chatTextArea);
             chatTextArea.appendText("\n\n");
         }).start();
 
         inputTextArea.clear();
     }
 
-    public Set<String> filterKeywords(String text) {
+    public Set<String> filterKeywords(String text, List<String> keywords) {
         // Convert the input text to lowercase for case-insensitive matching
         text = text.toLowerCase();
 
         // Filter keywords that overlap with the predefined list
         Set<String> overlappingKeywords = new HashSet<>();
-        for (String keyword : PREDEFINED_KEYWORDS) {
+      //  PREDEFINED_KEYWORDS_ELASTICSEARCH.addAll(PREDEFINED_KEYWORDS_RESOURCESELECTOR);
+
+        for (String keyword : keywords) {
             // Check if the keyword is present in the input text
             if (text.contains(keyword)) {
                 overlappingKeywords.add(keyword);
@@ -86,6 +118,7 @@ public class ChatTabController implements LanguageObserver{
         }
         return overlappingKeywords;
     }
+
 
     public void clearMessage() {
         messageTextArea.clear();
