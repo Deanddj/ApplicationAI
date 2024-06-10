@@ -20,7 +20,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ResourceSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ResourceSelector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceselector.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourcetest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceSelector.json" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +34,6 @@
         <option value="Class" />
         <option value="FxmlFile" />
         <option value="JUnit5 Test Class" />
-
       </list>
     </option>
   </component>
@@ -105,7 +103,7 @@
       <recent name="org.app.applicationai" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TEST_startLoginScreen">
+  <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="API" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.app.applicationai.API" />
       <module name="ApplicationAI" />
@@ -180,11 +178,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="JUnit.ResourceSelectorTest.documentationTest" />
         <item itemvalue="JUnit.ResourceSelectorTest.getKeywordTest" />
+        <item itemvalue="JUnit.ResourceSelectorTest.documentationTest" />
         <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="Application.API" />
-
       </list>
     </recent_temporary>
   </component>
@@ -332,7 +329,6 @@
                     <value>
                       <list>
                         <option value="origin/develop2" />
-
                       </list>
                     </value>
                   </entry>
