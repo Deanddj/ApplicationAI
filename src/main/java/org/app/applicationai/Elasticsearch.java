@@ -36,9 +36,10 @@ public class Elasticsearch {
         // Keywords om te zoeken
         List<String> searchKeywords = keywords;
 
+        System.out.println("de doorgegeven keywords in ElasticSearch zijn:"+ keywords);
         // Methode aanroepen voor resultaat
         String result = searchDocumentation(jsonFilePath, searchKeywords);
-        System.out.println(result);
+        //System.out.println(result);
         return result;
 
     }
