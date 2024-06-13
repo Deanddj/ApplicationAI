@@ -53,6 +53,7 @@ public class SettingsController extends Controller implements LanguageObserver {
     private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
     String selectedLanguage = loadLanguage();
 
+    @Override
     public void initialize() {
         userManager = new UserManager();
         user = userManager.loadUserData();
