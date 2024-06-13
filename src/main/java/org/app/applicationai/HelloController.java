@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class HelloController implements LanguageObserver {
+public class HelloController extends Controller implements LanguageObserver {
 
     @FXML
     private Button cancelButton, minimizeButton;
@@ -41,6 +41,7 @@ public class HelloController implements LanguageObserver {
     private Stage currentStage;
     private static Scene chatScene;
     @FXML
+    @Override
     public void initialize() {
         // Laad de initiële chat-tab
         loadInitialChatTab();

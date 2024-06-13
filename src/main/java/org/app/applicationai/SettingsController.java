@@ -8,7 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 
-public class SettingsController implements LanguageObserver {
+public class SettingsController extends Controller implements LanguageObserver {
 
     @FXML
     private Button cancelButton, minimizeButton;
