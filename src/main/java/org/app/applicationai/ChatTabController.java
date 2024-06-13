@@ -1,5 +1,5 @@
 package org.app.applicationai;
-//
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -78,7 +78,7 @@ public class ChatTabController extends Controller implements LanguageObserver{
 
         System.out.println("keywords gepakt uit file1: " + keywords);
         System.out.println("keywords gepakt uit file2: " + keywords2);
-        if (!keywords.isEmpty() || !keywords2.isEmpty() && !tabNameChanged) {
+        if ((!keywords.isEmpty() || !keywords2.isEmpty()) && !tabNameChanged) {
             if (!keywords.isEmpty()) {
                 helloController.changeTabName(tabCount - 1, stringHoofdletterMaken(keywords.get(0)));
                 System.out.println("keywords 1 is gevuld");
