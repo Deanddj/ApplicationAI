@@ -3,12 +3,10 @@ package org.app.applicationai;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.app.applicationai.ChatTabController;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,7 +15,6 @@ public class HelloController extends Controller implements LanguageObserver {
 
     @FXML
     private Button cancelButton, minimizeButton;
-
     private double xOffset = 0;
     private double yOffset = 0;
     @FXML
