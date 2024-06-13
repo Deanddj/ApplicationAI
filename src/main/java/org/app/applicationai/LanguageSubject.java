@@ -14,7 +14,7 @@ public class LanguageSubject {
     public void notifyObservers(String language) {
         currentLanguage = language;
         for (LanguageObserver observer : observers) {
-            observer.applyLanguageChanges(language);
+            observer.update(language);
         }
     }
 

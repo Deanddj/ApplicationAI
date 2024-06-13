@@ -1,5 +1,5 @@
 package org.app.applicationai;
-
+//
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -14,15 +14,10 @@ public class ChatTabController extends Controller implements LanguageObserver{
     private Button button_send;
 
     @FXML
-    private TextArea messageTextArea;
-
-    @FXML
     private TextArea chatTextArea;
 
     @FXML
     private TextArea inputTextArea;
-
-    private String userMessage;
 
     private String documentatie1;
     private String documentatie2;
@@ -37,22 +32,28 @@ public class ChatTabController extends Controller implements LanguageObserver{
 
     private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
 
-    public void ChatTabController (int tabCount){
-        this.tabCount = tabCount;
-    }
     public void setTabCount(int tabCount) {
         this.tabCount = tabCount;
     }
     public void setHelloController(HelloController helloController) {
         this.helloController = helloController;
     }
+
+    String selectedLanguage = loadLanguage();
+
     @FXML
     @Override
     public void initialize() {
         languageSubject.addObserver(this);
-        String selectedLanguage = loadLanguage();
-        applyLanguageChanges(selectedLanguage);
+        applyLanguageChanges();
+        loadGui();
     }
+
+    @Override
+    public void loadGui() {
+        button_send.setOnAction(event -> sendPrompt());
+    }
+
     @FXML
     private void sendPrompt() {
         String userPrompt = inputTextArea.getText();
@@ -78,7 +79,7 @@ public class ChatTabController extends Controller implements LanguageObserver{
 
         System.out.println("keywords gepakt uit file1: " + keywords);
         System.out.println("keywords gepakt uit file2: " + keywords2);
-        if (!keywords.isEmpty() || !keywords2.isEmpty() && !tabNameChanged) {
+        if ((!keywords.isEmpty() || !keywords2.isEmpty()) && !tabNameChanged) {
             if (!keywords.isEmpty()) {
                 helloController.changeTabName(tabCount - 1, stringHoofdletterMaken(keywords.get(0)));
                 System.out.println("keywords 1 is gevuld");
@@ -116,13 +117,14 @@ public class ChatTabController extends Controller implements LanguageObserver{
         return overlappingKeywords;
     }
 
-
-    public void clearMessage() {
-        messageTextArea.clear();
+    @Override
+    public void update(String selectedLanguage) {
+        this.selectedLanguage = selectedLanguage;
+        applyLanguageChanges();
     }
 
-    @Override
-    public void applyLanguageChanges(String selectedLanguage) {
+
+    public void applyLanguageChanges() {
         if ("Dutch".equals(selectedLanguage) || "Nederlands".equals(selectedLanguage)) {
             button_send.setText("Verstuur");
             Font font = Font.font("Arial", FontWeight.BOLD, 14.8);

@@ -1,9 +1,7 @@
 package org.app.applicationai;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -32,25 +30,33 @@ public class HelloController extends Controller implements LanguageObserver {
     @FXML
     private TabPane tabPane;
 
-    private int tabCount = 1; // Begin met één chat-tab
+    private int tabCount = 1;
 
     private final ArrayList<Tab> openTabs = new ArrayList<>();
 
     private static LanguageSubject languageSubject = LanguageManager.getInstance().getLanguageSubject();
 
     private Stage currentStage;
-    private static Scene chatScene;
+    String selectedLanguage = loadLanguage();
+
     @FXML
     @Override
     public void initialize() {
-        // Laad de initiële chat-tab
         loadInitialChatTab();
-        button_instellingen.setOnAction(event -> loadSettings());
-        button_uitloggen.setOnAction(event -> loadLogin());
 
         languageSubject.addObserver(this);
-        String selectedLanguage = loadLanguage();
-        applyLanguageChanges(selectedLanguage);
+        applyLanguageChanges();
+        loadGui();
+    }
+
+    @FXML
+    @Override
+    public void loadGui() {
+        button_instellingen.setOnAction(event -> loadSettings());
+        button_uitloggen.setOnAction(event -> loadLogin());
+        cancelButton.setOnAction(event -> cancelButtonOnAction());
+        minimizeButton.setOnAction(event -> minimizeButtonOnAction());
+        button_new_chat.setOnAction(event -> addNewTab());
     }
 
     @FXML
@@ -114,7 +120,13 @@ public class HelloController extends Controller implements LanguageObserver {
     }
 
     @Override
-    public void applyLanguageChanges(String selectedLanguage) {
+    public void update(String selectedLanguage) {
+        this.selectedLanguage = selectedLanguage;
+        applyLanguageChanges();
+    }
+
+
+    public void applyLanguageChanges() {
         if ("Dutch".equals(selectedLanguage) || "Nederlands".equals(selectedLanguage)) {
             button_instellingen.setText("      Instellingen");
             button_uitloggen.setText("    Uitloggen");
@@ -132,12 +144,12 @@ public class HelloController extends Controller implements LanguageObserver {
         return selectedLanguage;
     }
 
-    public void cancelButtonOnAction (ActionEvent e) {
+    public void cancelButtonOnAction () {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
-    public void minimizeButtonOnAction (ActionEvent e) {
+    public void minimizeButtonOnAction () {
         Stage stage = (Stage) minimizeButton.getScene().getWindow();
         stage.setIconified(true);
     }

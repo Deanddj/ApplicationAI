@@ -127,10 +127,10 @@
         "players": [
           {
             "name": "ali",
-            "description": "Ali is niet zo goed in het spel. Als cijfer krijgt hij een 4 van de 10."
+            "description": "Ali is te goed in het spel. Als cijfer krijgt hij een 11 van de 10."
           }
         ],
-        "description" : "Gijori is wel een grote professional"
+        "description" : "Gijori is juist een grote noob"
       }
     }
   ]

@@ -56,17 +56,22 @@ public class SettingsController extends Controller implements LanguageObserver {
     public void initialize() {
         userManager = new UserManager();
         user = userManager.loadUserData();
-        emailField.setText(user.getEmail());
-        passwordField.setText(user.getPassword());
-        button_wijzigEmail.setOnAction(event -> handleChangeEmail());
-        button_wijzigPassword.setOnAction(event -> handleChangePassword());
 
-        button_back.setOnAction(event -> handleBack());
-
-        languageComboBox.getItems().addAll("Nederlands", "English");
         languageSubject.addObserver(this);
 
-        applyLanguageChanges(selectedLanguage);
+        applyLanguageChanges();
+        loadGui();
+    }
+
+    @Override
+    public void loadGui() {
+        button_wijzigEmail.setOnAction(event -> handleChangeEmail());
+        button_wijzigPassword.setOnAction(event -> handleChangePassword());
+        button_back.setOnAction(event -> handleBack());
+
+        emailField.setText(user.getEmail());
+        passwordField.setText(user.getPassword());
+        languageComboBox.getItems().addAll("Nederlands", "English");
     }
 
     @FXML
@@ -84,7 +89,13 @@ public class SettingsController extends Controller implements LanguageObserver {
     }
 
     @Override
-    public void applyLanguageChanges(String selectedLanguage) {
+    public void update(String selectedLanguage) {
+        this.selectedLanguage = selectedLanguage;
+        applyLanguageChanges();
+    }
+
+
+    public void applyLanguageChanges() {
         languageComboBox.setValue(selectedLanguage);
         if ("Dutch".equals(selectedLanguage) || "Nederlands".equals(selectedLanguage)) {
             language.setText("Kies je taal");

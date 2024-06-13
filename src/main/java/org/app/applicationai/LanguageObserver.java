@@ -1,7 +1,7 @@
 package org.app.applicationai;
 
 public interface LanguageObserver {
-    void applyLanguageChanges(String language);
+    void update(String language);
 
     String loadLanguage();
 }
