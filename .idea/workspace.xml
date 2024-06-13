@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="update vr">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceSelectorTest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/app/applicationai/ResourceSelectorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_30_2024_3_04_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_30_2024_3_04_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_30_2024_1_39_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_30_2024_1_39_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_30_2024_3_03_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_30_2024_3_03_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3-5-2024_14_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3-5-2024_14_23__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4-6-2024_10_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_4-6-2024_10_09__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6-6-2024_14_03__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_6-6-2024_14_03__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6-6-2024_12_48__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6-6-2024_12_48__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2024_12_48_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_6_2024_12_48_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/API.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/Elasticsearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/Elasticsearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ResourceSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ResourceSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceselector.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourcetest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceSelector.json" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceSelector.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceSelector.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-
         <entry key="$PROJECT_DIR$" value="master" />
-
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,7 +65,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.API.executor": "Run",
@@ -94,7 +86,6 @@
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
-
   }
 }]]></component>
   <component name="RecentsManager">
@@ -186,9 +177,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="JUnit.ResourceSelectorTest.getKeywordTest" />
         <item itemvalue="JUnit.ResourceSelectorTest.documentationTest" />
-        <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="Application.API" />
       </list>
     </recent_temporary>

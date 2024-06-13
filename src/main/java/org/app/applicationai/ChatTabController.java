@@ -80,11 +80,11 @@ public class ChatTabController extends Controller implements LanguageObserver{
         System.out.println("keywords gepakt uit file2: " + keywords2);
         if (!keywords.isEmpty() || !keywords2.isEmpty() && !tabNameChanged) {
             if (!keywords.isEmpty()) {
-                helloController.changeTabName(tabCount - 1, keywords.get(0));
+                helloController.changeTabName(tabCount - 1, stringHoofdletterMaken(keywords.get(0)));
                 System.out.println("keywords 1 is gevuld");
             }
             else{
-                helloController.changeTabName(tabCount - 1, keywords2.get(0));
+                helloController.changeTabName(tabCount - 1, stringHoofdletterMaken(keywords2.get(0)));
                 System.out.println("keywords 2 is gevuld");
             }
             tabNameChanged = true;
@@ -93,8 +93,8 @@ public class ChatTabController extends Controller implements LanguageObserver{
         new Thread(() -> {
             documentatie1 = Elasticsearch.startElasticSearch(keywords);
             documentatie2 = ResourceSelector.startResourceSelector(keywords2);
-            String documentaties =documentatie1.concat(documentatie2);
-            System.out.println(documentaties);
+            String documentaties = documentatie1.concat(documentatie2);
+            //System.out.println(documentaties);
             chatTextArea.appendText("AI: ");
             API.starAI(userPrompt, documentaties, chatTextArea);
             chatTextArea.appendText("\n\n");
@@ -104,15 +104,11 @@ public class ChatTabController extends Controller implements LanguageObserver{
     }
 
     public Set<String> filterKeywords(String text, List<String> keywords) {
-        // Convert the input text to lowercase for case-insensitive matching
         text = text.toLowerCase();
 
-        // Filter keywords that overlap with the predefined list
         Set<String> overlappingKeywords = new HashSet<>();
-      //  PREDEFINED_KEYWORDS_ELASTICSEARCH.addAll(PREDEFINED_KEYWORDS_RESOURCESELECTOR);
 
         for (String keyword : keywords) {
-            // Check if the keyword is present in the input text
             if (text.contains(keyword)) {
                 overlappingKeywords.add(keyword);
             }
@@ -141,6 +137,13 @@ public class ChatTabController extends Controller implements LanguageObserver{
     public String loadLanguage() {
         String selectedLanguage = languageSubject.getCurrentLanguage();
         return selectedLanguage;
+    }
+
+    public static String stringHoofdletterMaken(String str) {
+        if (str == null || str.isEmpty()) {
+            return str;
+        }
+        return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
     }
 }
 

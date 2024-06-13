@@ -13,21 +13,6 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class Elasticsearch {
-    public static void main(String[] args) {
-        // !! TIJDELIJKE METHODE OM TE TESTEN !!
-
-        // Pad naar de JSON file
-        String jsonFilePath = "src/main/resources/org/app/applicationai/elasticsearch.json";
-
-        // Keywords om te zoeken
-        List<String> searchKeywords = List.of("vakantie", "ontslag", "opzeggen");
-
-        // Methode aanroepen voor resultaat
-        String result = searchDocumentation(jsonFilePath, searchKeywords);
-        System.out.println(result);
-
-        // !! TIJDELIJKE METHODE OM TE TESTEN !!
-    }
 
     public static String startElasticSearch(List<String> keywords){
         // Pad naar de JSON file

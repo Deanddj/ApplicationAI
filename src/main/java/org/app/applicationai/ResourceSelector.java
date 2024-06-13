@@ -15,7 +15,7 @@ import java.util.Set;
 public class ResourceSelector {
 
     public static void main(String[] args) {
-        // Test the searchDocumentation method
+        // Test de searchDocumentation methode
         String jsonFilePath = "src/main/resources/org/app/applicationai/resourceSelector.json";
         List<String> searchKeywords = List.of("java");
         String result = searchDocumentation(jsonFilePath, searchKeywords);
@@ -23,31 +23,30 @@ public class ResourceSelector {
     }
 
     public static String startResourceSelector(List<String> keywords) {
-        // Path to the JSON file
+        // Pad naar het JSON-bestand
         String jsonFilePath = "src/main/resources/org/app/applicationai/resourceSelector.json";
         System.out.println("de doorgegeven keywords in ResourceSelector zijn:" + keywords);
-        String result = searchDocumentation(jsonFilePath, keywords);
-        return result;
+        return searchDocumentation(jsonFilePath, keywords);
     }
 
     public static String searchDocumentation(String jsonFilePath, List<String> searchKeywords) {
         StringBuilder result = new StringBuilder();
 
-        // Load JSON file
+        // Laad JSON-bestand
         try (InputStream is = new FileInputStream(jsonFilePath)) {
             JSONTokener tokener = new JSONTokener(is);
             JSONObject jsonObject = new JSONObject(tokener);
             JSONArray allDocumentation = jsonObject.getJSONArray("foundDocumentation");
 
-            // Store matched documentation
+            // Sla passende documentatie op
             List<JSONObject> matchedDocumentation = new ArrayList<>();
 
-            // Search and collect documentation based on keywords
+            // Zoek en verzamel documentatie op basis van trefwoorden
             for (int i = 0; i < allDocumentation.length(); i++) {
                 JSONObject doc = allDocumentation.getJSONObject(i);
                 JSONArray keywords = doc.getJSONArray("keywords");
 
-                // Check if any of the searchKeywords are present in the keywords array
+                // Controleer of een van de zoekwoorden aanwezig is in de trefwoordenarray
                 for (String searchKeyword : searchKeywords) {
                     for (int j = 0; j < keywords.length(); j++) {
                         String keyword = keywords.getString(j).toLowerCase();
@@ -59,7 +58,7 @@ public class ResourceSelector {
                 }
             }
 
-            // Add all matched documentation descriptions to the result
+            // Voeg alle passende documentatiebeschrijvingen samen tot één string
             for (JSONObject documentation : matchedDocumentation) {
                 JSONArray keys = documentation.names();
                 for (int i = 0; i < keys.length(); i++) {
@@ -70,7 +69,7 @@ public class ResourceSelector {
                         for (int j = 0; j < innerKeys.length(); j++) {
                             String innerKey = innerKeys.getString(j);
                             if (innerKey.equals("description")) {
-                                result.append(innerObj.getString(innerKey)).append("\n");
+                                result.append(innerObj.getString(innerKey)).append(" ");
                             }
                         }
                     } else if (documentation.get(key) instanceof JSONArray) {
@@ -81,18 +80,18 @@ public class ResourceSelector {
                             for (int l = 0; l < arrayObjKeys.length(); l++) {
                                 String arrayObjKey = arrayObjKeys.getString(l);
                                 if (arrayObjKey.equals("description")) {
-                                    result.append(arrayObj.getString(arrayObjKey)).append("\n");
+                                    result.append(arrayObj.getString(arrayObjKey)).append(" ");
                                 }
                             }
                         }
                     } else if (key.equals("description")) {
-                        result.append(documentation.getString(key)).append("\n");
+                        result.append(documentation.getString(key)).append(" ");
                     }
                 }
             }
 
         } catch (FileNotFoundException e) {
-            System.err.println("File not found: " + jsonFilePath);
+            System.err.println("Bestand niet gevonden: " + jsonFilePath);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -100,16 +99,17 @@ public class ResourceSelector {
         return result.toString().trim();
     }
 
+
     public static List<String> getKeywords(String jsonFilePath) {
         Set<String> keywordsSet = new HashSet<>();
 
-        // Load JSON file
+        // Laad JSON-bestand
         try (InputStream is = new FileInputStream(jsonFilePath)) {
             JSONTokener tokener = new JSONTokener(is);
             JSONObject jsonObject = new JSONObject(tokener);
             JSONArray allDocumentation = jsonObject.getJSONArray("foundDocumentation");
 
-            // Collect all unique keywords
+            // Verzamel alle unieke trefwoorden
             for (int i = 0; i < allDocumentation.length(); i++) {
                 JSONObject doc = allDocumentation.getJSONObject(i);
                 JSONArray keywords = doc.getJSONArray("keywords");
@@ -120,12 +120,12 @@ public class ResourceSelector {
             }
 
         } catch (FileNotFoundException e) {
-            System.err.println("File not found: " + jsonFilePath);
+            System.err.println("Bestand niet gevonden: " + jsonFilePath);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        // Convert Set to List
+        // Zet Set om naar List
         return new ArrayList<>(keywordsSet);
     }
 }
