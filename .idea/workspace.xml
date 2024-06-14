@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="267cbaee-a7f2-4431-9dce-41b7ccbd9198" name="Changes" comment="assessment">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/app/applicationai/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3-5-2024_14_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3-5-2024_14_23__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_13_2024_2_44_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_13_2024_2_44_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceSelector.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/org/app/applicationai/resourceSelector.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/app/applicationai/ResourceSelectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/app/applicationai/ResourceSelectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ChatTabController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/Elasticsearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/Elasticsearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ResourceSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/ResourceSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/TEST_startLoginScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/TEST_startLoginScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/app/applicationai/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/app/applicationai/loginController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +101,7 @@
       <recent name="org.app.applicationai" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ResourceSelectorTest">
+  <component name="RunManager" selected="Application.TEST_startLoginScreen">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.app.applicationai.HelloApplication" />
       <module name="ApplicationAI" />
@@ -170,9 +177,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="JUnit.ResourceSelectorTest" />
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.TEST_startLoginScreen" />
         <item itemvalue="JUnit.ResourceSelectorTest.getKeywordTest" />
         <item itemvalue="JUnit.ResourceSelectorTest.documentationTest" />
       </list>

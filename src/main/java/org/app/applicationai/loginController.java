@@ -11,8 +11,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class loginController extends Controller {
+public class loginController{
     @FXML
     private AnchorPane topPane;
     @FXML
@@ -42,6 +43,16 @@ public class loginController extends Controller {
             }
         }
     }
+
+    public boolean authenticateUser(String username, String password, List<User> users) {
+        for (User user : users) {
+            if (user.getEmail().equals(username) && user.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void cancelButtonOnAction (ActionEvent e) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
@@ -62,15 +73,5 @@ public class loginController extends Controller {
     public void topPaneOnPressed(javafx.scene.input.MouseEvent mouseEvent) {
         xOffset = mouseEvent.getSceneX();
         yOffset = mouseEvent.getSceneY();
-    }
-
-    @Override
-    public void initialize() {
-
-    }
-
-    @Override
-    public void loadGui() {
-
     }
 }
