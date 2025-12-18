@@ -2,7 +2,12 @@
 
 A JavaFX-based desktop application developed as a school project, featuring a modern chat interface with user authentication and AI integration capabilities.
 
-## 🚀 Features
+## Screenshots
+
+### Login Screen
+![Login Screen](src/main/resources/images/login-screenshot.png)
+
+## Features
 
 - **User Authentication System** - Secure login with email and password validation
 - **Modern UI** - Custom window decorations with minimize and close buttons
@@ -13,7 +18,7 @@ A JavaFX-based desktop application developed as a school project, featuring a mo
 - **Resource Selector** - Dynamic resource selection functionality
 - **Elasticsearch Integration** - Search and data indexing capabilities
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Java 17** - Programming language
 - **JavaFX 17.0.6** - GUI framework
@@ -21,7 +26,7 @@ A JavaFX-based desktop application developed as a school project, featuring a mo
 - **JSON** - Data storage and configuration
 - **JUnit 5** - Testing framework
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ApplicationAI/
@@ -53,18 +58,18 @@ ApplicationAI/
 └── README.md                               # This file
 ```
 
-## 🎨 Design Patterns Used
+## Design Patterns Used
 
 - **Observer Pattern** - For language change notifications
 - **Singleton Pattern** - Scene and user management
 - **MVC Pattern** - Separation of UI and business logic
 
-## 📝 Notes
+## Notes
 
 - Java 17 or higher is required to run the project.
 - The application uses a custom window design without default OS decorations
 - User credentials are stored in `changeuser.json` (for demonstration purposes only)
 
-## 📄 License
+## License
 
 This is a school project for educational purposes.
