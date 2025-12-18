@@ -26,20 +26,42 @@ public class loginController extends Controller {
     private double yOffset = 0;
 
     public void loginButtonOnAction(ActionEvent e) {
+        System.out.println("Login button clicked!");
+        System.out.println("Username: " + usernameTextField.getText());
+        System.out.println("Password: " + passwordPasswordField.getText());
+        
         if (usernameTextField.getText().isEmpty() || passwordPasswordField.getText().isEmpty()) {
             System.out.println("Vul a.u.b. alle velden in");
             return;
         }
 
-        ArrayList<User> users = TEST_startLoginScreen.getUsers();
+        ArrayList<User> users = HelloApplication.getUsers();
+        System.out.println("Number of users: " + (users != null ? users.size() : "null"));
+        
+        if (users == null || users.isEmpty()) {
+            System.out.println("No users found!");
+            return;
+        }
+        
+        boolean loginSuccess = false;
         for (User user : users) {
+            System.out.println("Checking user: " + user.getEmail());
             if (usernameTextField.getText().equals(user.getEmail())) {
+                System.out.println("Email matches!");
                 if (passwordPasswordField.getText().equals(user.getPassword())) {
                     System.out.println("U heeft toegang (Email: " + user.getEmail() +" - Wachtwoord: " + user.getPassword() + ")");
                     Stage currentStage = (Stage) cancelButton.getScene().getWindow();
                     SceneManager.switchScene("hello-view.fxml", currentStage);
+                    loginSuccess = true;
+                    break;
+                } else {
+                    System.out.println("Password does not match!");
                 }
             }
+        }
+        
+        if (!loginSuccess) {
+            System.out.println("Login failed - invalid credentials");
         }
     }
     public void cancelButtonOnAction (ActionEvent e) {
